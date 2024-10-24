@@ -1,6 +1,6 @@
 baseURL = 'https://orca.pdx.edu/'
 languageCode = 'en-us'
-title = 'Orca Computing Accelerator'
+title = 'Orca Accelerator'
 theme = 'hugo-book'
 enableGitInfo = true
 
@@ -8,4 +8,3 @@ enableGitInfo = true
 
 BookRepo = 'https://github.com/orca-accelerator/orca-website'
 BookCommitPath = 'commit'
-BookDateFormat = 'Jan 2, 2006'
