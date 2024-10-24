@@ -1,0 +1,11 @@
+<ul>
+  {{ $pagePath := .Page.Path }}
+  {{ $sectionPath := .Page.CurrentSection.Path }}
+  {{ range where .Site.Pages "CurrentSection.Path" $sectionPath }}
+    {{ if ne $pagePath .Path }}
+      <li>
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
+      </li>
+    {{ end }}
+  {{ end }}
+</ul>
