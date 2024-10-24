@@ -1,0 +1,4 @@
+baseURL = 'https://orca.pdx.edu/'
+languageCode = 'en-us'
+title = 'Orca Computing Accelerator'
+theme = 'hugo-book'
