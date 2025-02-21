@@ -24,3 +24,11 @@ Note that the flag `-s website` tells Hugo that the root of the website is in th
 You can also `cd` to the `website` directory and run simply `hugo`.
 
 The `hugo serve` command can be used to run a local web server which will perform a live refresh when the content changes.
+
+## Creating a new page
+
+You can create a new page using the `hugo new content` command, for example:
+
+```
+hugo new content content/docs/docs/storage.md
+```
