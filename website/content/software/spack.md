@@ -9,29 +9,31 @@ weight: 1
 # bookSearchExclude: false
 ---
 
-# ORCA Spack
+# Using Spack on Orca
 
-=====
+[Spack](https://spack.io) is a tool from Lawrence Livermore National Laboratory for managing scientific research applications, packages and libraries.
+This is the description from its [about page](https://spack.io/about/):
 
-Spack is a tool from Lawrence Livermore National Labs for managing scientific research applications, packages and libraries.  This is the description from the [Spack page](https://spack.io/about/),
+> Spack is a package manager for [supercomputers](https://en.wikipedia.org/wiki/Supercomputer), Linux.
+> It makes installing scientific software easy.
+> With Spack, you can build a package with multiple versions, configurations, platforms, and compilers, and all of these builds can coexist on the same machine.
 
-"Spack is a package manager for [supercomputers](https://en.wikipedia.org/wiki/Supercomputer), Linux.  It makes installing scientific software easy. With Spack, you can build a package with multiple versions, configurations, platforms, and compilers, and all of these builds can coexist on the same machine."
 
-Make sure to review the documentation and tutorials at the [Spack web site](https://spack.readthedocs.io/en/latest/index.html).
+Spack has been used to build many of the modules available on the Orca cluster.
 
-Here at Research Computing we have installed Spack at /software/spack/spack.  Many of the software modules provided on the ORCA cluster were built using Spack.
+You can also use Spack to build, install and manage your own software.
+Following the [Spack tutorial](https://spack-tutorial.readthedocs.io/en/latest/tutorial_basics.html#), you can run the following commands to setup your local Spack environment.
 
-Run the commands below to initialize Spack for your personal use, i.e. build software in your home directory for your specific needs.  These are the first few steps in the [Spack tutorial](https://spack-tutorial.readthedocs.io/en/latest/tutorial_basics.html#).
-
-``` script
+```bash
 $ git clone --depth=2 --branch=releases/v0.23 https://github.com/spack/spack.git ~/spack
 $ source ~/spack/share/spack/setup-env.sh
 ```
 
 We have standardized on gcc 13.2.0 for use on ORCA cluster nodes.
 
-Now you will need to enable gcc@13.2.0 for your Spack environment.  Make sure the file $HOME/.spack/linux/compilers.yaml contains the following.
-``` yaml
+Now you will need to enable `gcc@13.2.0` for your Spack environment.
+Make sure the file `~/.spack/linux/compilers.yaml` contains the following.
+```yaml
 compilers:
 - compiler:
     spec: gcc@=13.2.0
@@ -41,17 +43,18 @@ compilers:
       f77: /software/builds/compilers/gcc/13.2.0/bin/gfortran
       fc: /software/builds/compilers/gcc/13.2.0/bin/gfortran
     flags: {}
-    operating\_system: rocky9
-    target: x86\_64
+    operating_system: rocky9
+    target: x86_64
     modules: []
     environment: {}
-    extra\_rpaths: []
+    extra_rpaths: []
 ```
 
-Now install a package, but before installing a package in your instance of spack make sure it does not exist as a module already, i.e. run 'module available'.
+Now you can use Spack to install packages.
+Before installing a package, make sure it does not exist as a module already by checking the results of `module available`.
 
-You will install netcdf here as an example, since it is used in a lot of geo and climate research data.
-``` script
+As an example, we can install [NetCDF](https://www.unidata.ucar.edu/software/netcdf/), which is commonly used in climate research.
+```bash
 $ spack list netcdf %gcc@13.2.0
 netcdf-c    netcdf-cxx4     netcdf95         py-h5netcdf
 netcdf-cxx  netcdf-fortran  parallel-netcdf  py-netcdf4
@@ -59,5 +62,4 @@ netcdf-cxx  netcdf-fortran  parallel-netcdf  py-netcdf4
 $ spack install netcdf-c netcdf-cxx netcdf-fortran
 ```
 
-You will see the various netcdf versions and dependencies installed into your $HOME/spack/opt path.
-
+You will see the various NetCDF versions and dependencies installed into `~/spack/opt`.
