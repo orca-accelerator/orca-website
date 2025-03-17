@@ -9,9 +9,6 @@ weight: 1
 # bookSearchExclude: false
 ---
 
-# ORCA - Python
-=======
-
 # Using Python on Orca
 
 Python is a programming language that is easy to learn, easy to use, and easy to integrate with other software.  It is widely used by researchers because of the rich libraries available for math and science.  Python trades performance for ease of development.
