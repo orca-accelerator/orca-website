@@ -13,7 +13,8 @@ weight: 1
 
 Python is a programming language that is easy to learn, easy to use, and easy to integrate with other software.  It is widely used by researchers because of the rich libraries available for math and science.  Python trades performance for ease of development.
 
-This page is concerned with how Python is used on OIT-RC's systems and not how to use Python itself.  For a great Python tutorial, visit [learnpython.org](https://www.learnpython.org/).
+This page is concerned with how Python is used on the Orca cluster.
+For a great Python tutorial on how to use the Python language itself, visit [learnpython.org](https://www.learnpython.org/).
 
 ## Getting Started
 
@@ -105,18 +106,15 @@ $ conda install pyperformance pandas dask ray scipy scikit-learn
 ```
 Be sure you do not mix conda and pip install commands which can lead to a confused environment.  There is one exception, if a package is only available with pip.
 
-Virtual Environment using Mamba (ADVANCED)
-------------------------------------------
+## Virtual Environment using Mamba **(Advanced)**
 
 Mamba is also made available after doing the module load python step.  Mamba is a faster alternative to using Conda, you can replace the conda commands above with mamba.
 
-Using Python on a Cluster with SLURM
-====================================
+## Using Python on a Cluster with Slurm
 
-There is two ways of using Python on a cluster: either having several copies of the same Python script running (like with a job array), or having a Python script use MPI (message passing interface) to communicate between several children.
+There are two ways of using Python on a cluster: either having several copies of the same Python script running (like with a job array), or having a Python script use MPI (message passing interface) to communicate between several children.
 
-Python with a SLURM Job Array
------------------------------
+### Python with a Slurm Job Array
 
 A job array is basically having a number of copies of the same program. This is good for running the same tests several times for an average, or for running the same script several times but specifying the argument based off which copy the script is.
 
@@ -163,8 +161,7 @@ For more on job arrays, refer [here](https://sites.google.com/pdx.edu/research-c
 
 
 
-Python with MPI: What is mpi4py?
---------------------------------
+## Python and MPI with `mpi4py`?
 
 mpi4py is a Python package that allows for MPI Python programs.
 
