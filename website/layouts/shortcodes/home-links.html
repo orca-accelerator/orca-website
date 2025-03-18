@@ -1,0 +1,22 @@
+<ul class="home-links">
+   <li>
+      <a href="{{ (.Site.GetPage "about").RelPermalink }}">
+         <span class="icon">groups</span>About
+      </a>
+   </li>
+   <li>
+      <a href="{{ (.Site.GetPage "docs/getting-started.md").RelPermalink }}">
+         <span class="icon">pin_drop</span>Getting Started
+      </a>
+   </li>
+   <li>
+      <a href="{{ (.Site.GetPage "docs").RelPermalink }}">
+         <span class="icon">menu_book</span>Documentation
+      </a>
+   </li>
+   <li>
+      <a href="{{ (.Site.GetPage "contact-us").RelPermalink }}">
+         <span class="icon">mail</span>Contact Us
+      </a>
+   </li>
+</ul>
