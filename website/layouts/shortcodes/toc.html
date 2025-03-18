@@ -1,11 +1,14 @@
-<ul>
-  {{ $pagePath := .Page.Path }}
-  {{ $sectionPath := .Page.CurrentSection.Path }}
-  {{ range where .Site.Pages "CurrentSection.Path" $sectionPath }}
-    {{ if ne $pagePath .Path }}
+{{ template "toc-section-children" (dict "Section" .Page.CurrentSection) }}
+
+{{ define "toc-section-children" }}
+  <ul>
+    {{ range .Section.Pages }}
       <li>
-        <a href="{{ .Permalink }}">{{ .Title }}</a>
+        <a href="{{ .Permalink }}">{{ .Title }}</a> </li>
+        {{ if .IsSection }}
+          {{ template "toc-section-children" (dict "Section" .) }}
+        {{ end }}
       </li>
     {{ end }}
-  {{ end }}
-</ul>
+  </ul>
+{{ end }}

@@ -30,5 +30,5 @@ The `hugo serve` command can be used to run a local web server which will perfor
 You can create a new page using the `hugo new content` command, for example, from within the `website` directory,
 
 ```
-hugo new content content/docs/docs/storage.md
+hugo new content -k docs content/docs/storage.md
 ```
