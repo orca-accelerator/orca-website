@@ -1,6 +1,6 @@
 ---
 title: "Open OnDemand"
-weight: 2
+weight: 10
 # bookFlatSection: false
 # bookToc: true
 # bookHidden: false
