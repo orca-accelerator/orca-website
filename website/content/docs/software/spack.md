@@ -14,7 +14,7 @@ weight: 1
 [Spack](https://spack.io) is a tool from Lawrence Livermore National Laboratory for managing scientific research applications, packages and libraries.
 This is the description from its [about page](https://spack.io/about/):
 
-> Spack is a package manager for [supercomputers](https://en.wikipedia.org/wiki/Supercomputer), Linux.
+> Spack is a package manager for [supercomputers](https://en.wikipedia.org/wiki/Supercomputer) [...]
 > It makes installing scientific software easy.
 > With Spack, you can build a package with multiple versions, configurations, platforms, and compilers, and all of these builds can coexist on the same machine.
 
