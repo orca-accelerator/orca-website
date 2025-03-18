@@ -23,4 +23,4 @@ We also have a [Zulip chat](https://orca.zulipchat.com/join/22lmb4v2horqxs57fqub
 
 ## Contact Us
 
-You can also [contact us]({{< ref "/contact_us" >}}) for more help.
+You can also [contact us]({{< ref "/contact-us" >}}) for more help.
