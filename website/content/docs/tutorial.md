@@ -1,5 +1,5 @@
 ---
-title: "Getting Started"
+title: "Getting Started Tutorial"
 weight: 1
 # bookFlatSection: false
 # bookToc: true
