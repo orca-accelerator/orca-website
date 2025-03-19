@@ -17,7 +17,7 @@ Orca is [funded by the National Science Foundation]({{< ref "acknowledgements.md
 
 ## Getting Started
 
-For information on **getting access to Orca**, **connecting to the Orca cluster**, and **using Orca to accelerate your research**, see the page on {{< autolink "docs/getting-started.md" >}}
+For information on **getting access to Orca**, **connecting to the Orca cluster**, and **using Orca to accelerate your research**, see the [getting started tutorial]({{< ref "docs/tutorial.md" >}}).
 
 ## Compute Resources
 
