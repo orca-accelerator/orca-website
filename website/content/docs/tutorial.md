@@ -1,5 +1,5 @@
 ---
-title: "Getting Started Tutorial"
+title: "Getting Started (Tutorial)"
 weight: 1
 # bookFlatSection: false
 # bookToc: true
@@ -9,7 +9,7 @@ weight: 1
 # bookSearchExclude: false
 ---
 
-# Getting Started Tutorial
+# Getting Started (Tutorial)
 
 ## Step 1. Requesting Access to Orca
 
