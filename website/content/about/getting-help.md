@@ -20,6 +20,7 @@ Questions can be asked on the [Orca HPC Users Google Group](https://groups.googl
 ## Zulip Chat
 
 We also have a [Zulip chat](https://orca.zulipchat.com/join/22lmb4v2horqxs57fqubvvl7/) (similar to Slack), where users can ask questions and get support.
+**Thank you to [Zulip](https://zulip.com) for sponsoring our project chat.**
 
 ## Contact Us
 
