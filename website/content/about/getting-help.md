@@ -15,7 +15,7 @@ Please consult the [Orca documentation]({{< ref "/docs" >}}) for information on 
 
 ## Google Group
 
-Questions can be asked on the [Orca HPC Users Google Group](https://groups.google.com/a/pdx.edu/forum/#!forum/PROJ-Orca-HPC-Users-Group).
+Questions can be asked on the [Orca HPC Users Google Group](https://groups.google.com/a/pdx.edu/forum/#!forum/Orca-HPC-Users-Group).
 
 ## Zulip Chat
 
