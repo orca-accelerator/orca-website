@@ -21,7 +21,7 @@ To obtain a complete list of all modules currently available on the system, run
 module avail
 ```
 
-To load a module, e.g. GCC 13.2.0 compilers
+To load a module, e.g. the GCC 13.2.0 compilers
 
 ```
 module load gcc/13.2.0
