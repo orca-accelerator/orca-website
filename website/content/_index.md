@@ -3,7 +3,7 @@ title: Orca
 type: docs
 ---
 
-# Orca: Oregon Regional Computing Accelerator
+# ORCA -- Oregon Regional Computing Accelerator
 
 {{< about >}}
 
