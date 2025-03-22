@@ -1,7 +1,7 @@
 baseURL = 'https://orca.pdx.edu/'
 languageCode = 'en-us'
 title = 'Orca Accelerator'
-theme = ['hugo-notice', 'hugo-book']
+theme = ['hugo-book', 'hugo-notice', 'hugo-admonitions']
 enableGitInfo = true
 
 [params]
