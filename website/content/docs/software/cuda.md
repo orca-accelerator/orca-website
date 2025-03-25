@@ -15,10 +15,20 @@ weight: 1
 
 CUDA is available on Orca as a [module]({{< ref "modules.md" >}}).
 To load CUDA, run `module load cuda`.
-This will make CUDA tools such as the CUDA compiler `nvcc` available.
+This will make available CUDA tools such as the CUDA compiler `nvcc` and the Nsight profilers `nsys` and `ncu`.
+
+## Using GPUs
+
+In order to use Orca's GPUs, they must be [requested as part of a Slurm job]({{< ref submitting-jobs >}}).
+The number and type of GPUs can be specified using Slurm's generic resource (`gres`) scheduling.
+
+### Seeing Allocated GPUs
+
+On a compute node, to see the available GPUs in the allocation, run the command `nvidia-smi`.
+If `nvidia-smi` does not report any GPUs, it may be because GPUs were not requested as part of your job.
+See the page on [submitting jobs]({{< ref "submitting-jobs#specifying-job-resources" >}}) for more details.
 
 ## Compiler Options and GPU Architectures
-
 
 When using `nvcc` to compile your code for Nvidia GPUs, you must specify the architecture you want to target.
 If you don't specify anything, `sm_52` will be used, which will work on all GPUs on Orca, but may not give optimal performance.
