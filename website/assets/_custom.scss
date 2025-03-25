@@ -33,3 +33,20 @@
    color: #444;
    background: #e7f2fa;
 }
+
+.book-menu {
+   // Override justification of menu item to place disclosure triangles closer
+   // to menu text
+   .justify-between
+   {
+      justify-content: flex-start;
+   }
+   input.toggle + label::after {
+      content: "▸";
+      padding-left: 1ex;
+   }
+   input.toggle:checked + label::after {
+      content: "▾";
+      padding-left: 1ex;
+   }
+}
