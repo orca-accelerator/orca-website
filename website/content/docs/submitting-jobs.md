@@ -16,10 +16,44 @@ weight: 10
 Orca uses the [Slurm Workload Manager](https://slurm.schedmd.com/) for job control and management.
 Slurm allows you to submit jobs that run on the compute nodes.
 Using Slurm, you can run an [**interactive session**](#interactive-sessions) or submit [**batch jobs**](#batch-jobs).
+In both cases, you can [specify which resources](#specifying-job-resources) (CPUs, GPUs, memory) you need to run your job.
 
 {{< notice note >}}
 For a detailed introduction to Slurm, visit the [Slurm Quick Start User Guide](https://slurm.schedmd.com/quickstart.html).
 {{< /notice >}}
+
+## Specifying Job Resources
+
+Each job you submit (whether it is an interactive or batch job) should specify the resources needed by the job.
+These resources include: number of CPU cores, number (and type) of GPUs, memory, and time limit.
+These can be specified either via command-line arguments (to `salloc` for [interactive jobs](#interactive-sessions)) or via batch script options (for [submitting batch jobs](#batch-jobs)).
+
+{{< notice info >}}
+Unless explicitly requested, jobs on Orca will not have access to GPUs and will be allocated only one CPU core per node.
+To request more resources, use the options as described below.
+{{< /notice >}}
+
+| Resource  | How to Request |
+| --- | --- |
+| CPU Cores | To request `N` cores total for the job: `--ntasks=N` (or `-n N`). |
+| GPUs | To request `N` GPUs per node: `--gres=gpu:N`. Specific GPUs can be specified via `--gres=gpu:l40s:N` or `--gres=gpu:a30:N`. |
+| Memory (Per Node) | `--mem=<size>[unit]`, where `unit` is one of `K`, `M`, `G`, `T` (for KB, MB, GB, and TB; defaults to MB if omitted). The special case `--mem=0` requests all the memory on each node.  |
+| Memory (Per CPU Core) | `--mem-per-cpu=<size>[unit]`, where `unit` is as above. |
+| Nodes | To request `N` nodes: `--nodes=N` (or `-N N`). **Note:** by default, each node will only be allocated 1 CPU core (out of 64 per node). To request more CPU cores, specify also `--ntasks`. |
+| Time | For a time limit of `N` minutes, `--time=N` (or `-t N`). |
+
+### Examples
+
+The following examples show how to request an interactive session with a variety of resources.
+
+* To request a job with 10 CPU cores
+   * `salloc --ntasks=10`
+* To request all the cores and memory on a single node (`--mem=0` requests all the memory per node)
+   * `salloc --nodes=1 --ntasks=64 --mem=0`
+* To request a single L40S GPU
+   * `salloc --gres=gpu:l40s:1`
+* To request eight A30 GPUs across two compute nodes (with one CPU core per GPU)
+   * `salloc --nodes=2 --gres=gpu:a30:4 --cpus-per-gpu=1`
 
 ## Interactive Sessions
 
@@ -41,7 +75,6 @@ When you are done, running `exit` from the shell will return you to the login no
 * `sinfo` - Report the state of partitions and nodes managed by Slurm. There are a number of filtering, sorting, and formatting options.
 * `scancel` - Cancel a submitted job (pending or running).
 
-
 ## Partitions
 
 The Orca cluster has four partitions to which jobs can be submitted.
@@ -56,6 +89,18 @@ The sinfo command will display an overview of partitions:
 sinfo --long --Node
 ```
 
-{{< notice note >}}
+{{< about >}}
 For more information, see the PSU Research Computing documentation on the [Slurm Scheduler](https://sites.google.com/pdx.edu/research-computing/getting-started/slurm-scheduler) and [Slurm parallelism](https://sites.google.com/pdx.edu/research-computing/faqs/coeus-hpc-faqs/slurm-parallelism).
-{{< /notice >}}
+{{< /about >}}
+
+## Running Parallel Jobs
+
+Once you have an allocation, you can run parallel (MPI) jobs using the `srun` command to launch parallel jobs.
+The number of MPI ranks is supplied through the `--ntasks` or `-n` flag.
+Note that commands such as `mpirun` and `mpiexec` are **not available** on Orca, and `srun` should be used instead.
+
+### Binding GPUs to Parallel Jobs
+
+To use one GPU per MPI rank, `srun` should be supplied with the option `--gpu-bind=single:1`.
+For example, on a single-node allocation with 4 GPUs and 4 CPU cores, `srun -n 4 --gpu-bind=single:1 <command>` will uniquely bind each of the GPUs to a different MPI rank.
+As an illustration, `srun -n 4 --gpu-bind=single:1 nvidia-smi -L` will print out the unique IDs of the GPUs assigned to each MPI rank.
