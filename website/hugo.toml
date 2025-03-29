@@ -10,7 +10,7 @@ BookRepo = 'https://github.com/orca-accelerator/orca-website'
 BookCommitPath = 'commit'
 BookSection = '*'
 BookLogo = 'logo-full.png'
-BookFavicon = 'logo.png'
+BookFavicon = 'favicon.png'
 
 [markup]
   [markup.highlight]
