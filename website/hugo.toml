@@ -6,6 +6,7 @@ enableGitInfo = true
 
 [params]
 
+BookTheme = 'auto'
 BookRepo = 'https://github.com/orca-accelerator/orca-website'
 BookCommitPath = 'commit'
 BookSection = '*'
