@@ -33,14 +33,15 @@ Unless explicitly requested, jobs on Orca will not have access to GPUs and will 
 To request more resources, use the options as described below.
 {{< /notice >}}
 
-| Resource  | How to Request |
-| --- | --- |
-| CPU Cores | To request `N` cores total for the job: `--ntasks=N` (or `-n N`). |
-| GPUs | To request `N` GPUs per node: `--gres=gpu:N`. Specific GPUs can be specified via `--gres=gpu:l40s:N` or `--gres=gpu:a30:N`. |
-| Memory (Per Node) | `--mem=<size>[unit]`, where `unit` is one of `K`, `M`, `G`, `T` (for KB, MB, GB, and TB; defaults to MB if omitted). The special case `--mem=0` requests all the memory on each node.  |
-| Memory (Per CPU Core) | `--mem-per-cpu=<size>[unit]`, where `unit` is as above. |
-| Nodes | To request `N` nodes: `--nodes=N` (or `-N N`). **Note:** by default, each node will only be allocated 1 CPU core (out of 64 per node). To request more CPU cores, specify also `--ntasks`. |
-| Time | For a time limit of `N` minutes, `--time=N` (or `-t N`). |
+| Resource | Option | Notes |
+| --- | --- | --- |
+| CPU Cores | `--ntasks=<num>` | To request `<num>` CPU cores total for the job (or shorthand `-n <num>`). |
+| GPUs | `--gres=gpu:<num>` | To request `<num>` GPUs per node. Specific GPUs can be specified via `--gres=gpu:l40s:<num>` or `--gres=gpu:a30:<num>`. |
+| Memory (Per Node) | `--mem=<size>[unit]` | `unit` is one of `K`, `M`, `G`, `T` (for KB, MB, GB, and TB; defaults to MB if omitted). The special case `--mem=0` requests all the memory on each node. |
+| Memory (Per CPU Core) | `--mem-per-cpu=<size>[unit]` | `unit` is as above. |
+| Nodes | `--nodes=<num>` | To request `<num>` nodes (or shorthand `-N <num>`). **Note:** by default, each node will only be allocated 1 CPU core (out of 64 per node). To request more CPU cores, specify also `--ntasks`. |
+| Time | `--time=<min>` | For a time limit of `<min>` minutes (or shorthand `-t <min>`). |
+{.no-wrap-col-2}
 
 ### Examples
 
@@ -48,6 +49,8 @@ The following examples show how to request an interactive session with a variety
 
 * To request a job with 10 CPU cores
    * `salloc --ntasks=10`
+* To request a job with access to one GPU
+   * `salloc --gres=gpu:1`
 * To request all the cores and memory on a single node (`--mem=0` requests all the memory per node)
    * `salloc --nodes=1 --ntasks=64 --mem=0`
 * To request a single L40S GPU
