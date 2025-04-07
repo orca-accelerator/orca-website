@@ -1,36 +1,4 @@
-.home-links {
-   font-size: 20px;
-   list-style:none;
-}
-
-.home-links li {
-   margin: 10px 0;
-}
-
-.book-brand img {
-   width: 100%;
-   height: auto;
-}
-
-.icon {
-   font-family: 'Material Icons';
-   font-weight: normal;
-   font-style: normal;
-   font-size: 32px;
-   color: #0055bb;
-   line-height: 1;
-   letter-spacing: normal;
-   text-transform: none;
-   display: inline-block;
-   white-space: nowrap;
-   word-wrap: normal;
-   direction: ltr;
-   -moz-font-feature-settings: 'liga';
-   -moz-osx-font-smoothing: grayscale;
-   padding-right: 0.75ex;
-   vertical-align: top;
-}
-
+/* Style for 'about' shortcode */
 .about-box {
    padding: 18px;
    line-height: 24px;
@@ -39,9 +7,23 @@
    background: #e7f2fa;
 }
 
+/* Dark theme */
+@media (prefers-color-scheme:dark) {
+   .about-box {
+      color: #ddd;
+      background: #023;
+   }
+}
+
+/* Full-width logo in top-left of page. */
+.book-brand img {
+   width: 100%;
+   height: auto;
+}
+
+/* Override justification of menu item to place disclosure triangles closer to
+menu text. */
 .book-menu {
-   // Override justification of menu item to place disclosure triangles closer
-   // to menu text
    .justify-between
    {
       justify-content: flex-start;
