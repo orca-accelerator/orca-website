@@ -17,7 +17,7 @@ The different file systems have different limits (quotas) and performance charac
 | Location | Path | Performance | Quota | Note |
 | -------- | ---- | ----------- | ----- | ---- |
 | [Home Directory](#home-directory) | `/home/<username>` | Slow | 100 GB | Backed up nightly |
-| [Parallel Scratch Storage](#parallel-scratch-storage) | `/scratch/` | Faster | | Not backed up |
+| [Parallel Scratch Storage](#parallel-scratch-storage) | `/scratch/<workspace>` | Faster | ---                                                    | Not backed up |
 | [Local Scratch Storage](#local-scratch) | `/tmp` | Fastest | 480 GB | Deleted when job ends |
 
 ## Home Directory
@@ -34,6 +34,33 @@ Home directories are backed up to tape on a nightly basis.
 ## Parallel Scratch Storage
 
 Parallel scratch storage is allocated using [HPC Workspaces](https://github.com/holgerBerger/hpc-workspace).
+
+In order to use parallel scratch storage, you must first create a **workspace**.
+A workspace is scratch space that expires after a set time (this is because scratch storage is for temporary rather than long-term storage).
+
+### Creating (allocating) a workspace
+
+To create a workspace, run the command `ws_allocate <ws-name> <days>`, where `<ws-name>` is the workspace name, and `<days>` is the number of days before the workspace will expire.
+You can give the workspace any name you like (workspace directories are automatically prefixed with your username, so the workspace name does not have to be globally unique).
+Running `ws_allocate --help` will show available options for workspace creation.
+The maximum number of days before a workspace expires is 30.
+
+Once the workspace is created, it can be accessed at `/scratch/<username>-<workspace-name>`.
+
+### Listing workspaces
+
+You can list all your active workspaces by running `ws_list`.
+
+### Extending a workspace
+
+If your workspace is about to expire, and you want to keep it around for longer, you can **extend** the workspace, by running `ws_extend <ws-name> <days>`.
+A workspace may be extended a maximum of five times.
+
+### Sharing a workspace
+
+You can give access to your workspace to other users on Orca using the `ws_share` command.
+To give access to a user with username `<user>`, run `ws_share share <ws-name> <user>`.
+You can later revoke access with `ws_share unshare <ws-name> <user>`.
 
 ## Local Scratch
 
