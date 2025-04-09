@@ -32,7 +32,7 @@ The login node does not have a high-performance CPU or any GPUs.
 For compute-intensive work, a job should be run on one or more of the compute nodes (see the pages on {{< autolink "submitting-jobs.md" >}}).
 
 {{< notice warning >}}
-Do not run computational jobs on the login node.
+**Do not run computational jobs on the login node.**
 These are for logging in, accessing your home directory, accessing file systems, writing and editing files, compressing and uncompressing data sets, scheduling computational jobs, etc.
 Computational jobs should be run on compute nodes, through the [Slurm job scheduler]({{< ref "docs/submitting-jobs" >}}).
 Long computational process running on login nodes are liable to be terminated without notification.

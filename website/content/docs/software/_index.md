@@ -26,3 +26,8 @@ Users can manage their own Python environments using a variety of tools; please 
 
 Users can also use the [Spack package manager](https://spack.io) to install software packages and libraries in their home directories.
 For more information, see [using Spack on Orca]({{< ref "spack" >}}).
+
+## Slurm Scheduler
+
+Jobs are submitted and scheduled using the [Slurm Workload Manager](https://slurm.schedmd.com).
+For more information, see the documentation on [submitting jobs]({{< ref "../submitting-jobs" >}}).
