@@ -16,13 +16,5 @@ Recognizing Orca in your research is important for our continued funding.
 If you have used Orca resources in your research, please cite the Orca project.
 Recognizing Orca helps us advocate for funding to maintain, improve, and build on Orca.
 
-<!--
-{{< notice info "Suggested Acknowledgement" >}}
-
-Computational resources used in this work were supported by the Oregon Regional Computing Accelerator (Orca), funded by NSF CC*-2346732.
-{{< /notice >}}
--->
-
-
 > [!QUOTE] Suggested Acknowledgement
 > Computational resources used in this work were supported by the Oregon Regional Computing Accelerator (Orca), funded by NSF CC*-2346732.
