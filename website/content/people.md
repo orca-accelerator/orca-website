@@ -1,6 +1,6 @@
 ---
 title: "People"
-weight: 3
+weight: 21
 # bookFlatSection: false
 # bookToc: true
 # bookHidden: false

@@ -1,6 +1,6 @@
 ---
 title: "Contact Us"
-weight: 2 # Place at bottom
+weight: 22
 # bookFlatSection: false
 # bookToc: true
 # bookHidden: false
