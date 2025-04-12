@@ -7,11 +7,19 @@
    border-left: 4px solid #006090;
 }
 
+.notice {
+   color: #000 !important;
+}
+
 /* Dark theme */
 @media (prefers-color-scheme:dark) {
    .about-box {
       color: #ddd;
       background: #023;
+   }
+
+   .notice {
+      color: #ddd !important;
    }
 }
 
