@@ -36,7 +36,7 @@ To request more resources, use the options as described below.
 | Resource | Option | Notes |
 | --- | --- | --- |
 | CPU Cores | `--ntasks=<num>` | To request `<num>` CPU cores total for the job (or shorthand `-n <num>`). |
-| GPUs | `--gres=gpu:<num>` | To request `<num>` GPUs per node. Specific GPUs can be specified via `--gres=gpu:l40s:<num>` or `--gres=gpu:a30:<num>`. |
+| GPUs | `--gres=gpu:<num>` | To request `<num>` GPUs per node. Specific GPUs can be specified via `--gres=gpu:l40s:<num>` or `--gres=gpu:a30:<num>`. See [Binding GPUs to Parallel Jobs](#binding-gpus-to-parallel-jobs). |
 | Memory (Per Node) | `--mem=<size>[unit]` | `unit` is one of `K`, `M`, `G`, `T` (for KB, MB, GB, and TB; defaults to MB if omitted). The special case `--mem=0` requests all the memory on each node. |
 | Memory (Per CPU Core) | `--mem-per-cpu=<size>[unit]` | `unit` is as above. |
 | Nodes | `--nodes=<num>` | To request `<num>` nodes (or shorthand `-N <num>`). **Note:** by default, each node will only be allocated 1 CPU core (out of 64 per node). To request more CPU cores, specify also `--ntasks`. |
