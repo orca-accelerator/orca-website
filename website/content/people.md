@@ -22,7 +22,8 @@ weight: 21
 
 #### PSU Research Computing Team
 
+* Jens Almer
+* Michael Ewan
 * Aaron Landreth
 * Marko Markoc
 * Jim Stapleton
-* Michael Ewan
