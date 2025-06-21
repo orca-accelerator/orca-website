@@ -1,10 +1,6 @@
 <style type="text/css">
 a.markdown-btn {
-   &:link,
-   &:visited,
-   &:active {
-      color: #fff;
-   }
+   color: #fff;
    background-color: #40A02B;
    border-radius: 10px;
    text-align: center;
@@ -13,12 +9,16 @@ a.markdown-btn {
    border: none;
    cursor: pointer;
 
-   &:hover,
-   &:active {
-     text-decoration: none;
-     background-color: #368524;
-   }
 }
+
+a.markdown-btn:link { color: #fff; }
+a.markdown-btn:visited { color: #fff; }
+a.markdown-btn:active, a.markdown-btn:hover {
+   color: #fff;
+   background-color: #368524;
+   text-decoration: none;
+}
+
 .centered {
    margin-left: auto;
    margin-right: auto;
