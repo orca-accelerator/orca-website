@@ -21,10 +21,11 @@
    white-space: nowrap;
    word-wrap: normal;
    direction: ltr;
-   -moz-font-feature-settings: 'liga';
-   -moz-osx-font-smoothing: grayscale;
-   padding-right: 0.75ex;
    vertical-align: top;
+}
+
+.text {
+   padding-left: 1.75ex;
 }
 
 /* Dark theme */
@@ -33,28 +34,27 @@
       color: #84b2ff;
    }
 }
-
-
 </style>
+
 <ul class="home-links">
    <li>
       <a href="{{ (.Site.GetPage "about").RelPermalink }}">
-         <span class="icon">groups</span>About
+         <span class="icon">groups</span><span class="text">About</span>
       </a>
    </li>
    <li>
       <a href="{{ (.Site.GetPage "docs/tutorial.md").RelPermalink }}">
-         <span class="icon">pin_drop</span>Getting Started (Tutorial)
+         <span class="icon">pin_drop</span><span class="text">Getting Started (Tutorial)</span>
       </a>
    </li>
    <li>
       <a href="{{ (.Site.GetPage "docs").RelPermalink }}">
-         <span class="icon">menu_book</span>Documentation
+         <span class="icon">menu_book</span><span class="text">Documentation</span>
       </a>
    </li>
    <li>
       <a href="{{ (.Site.GetPage "contact-us").RelPermalink }}">
-         <span class="icon">mail</span>Contact Us
+         <span class="icon">mail</span><span class="text">Contact Us</span>
       </a>
    </li>
 </ul>
