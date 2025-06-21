@@ -13,14 +13,14 @@ weight: 2
 
 Please consult the [Orca documentation]({{< ref "/docs" >}}) for information on accessing and using the Orca cluster.
 
+## Zulip Chat
+
+We have a [Zulip chat](https://orca.zulipchat.com/join/22lmb4v2horqxs57fqubvvl7/) (similar to Slack), where users can ask questions and get support.
+**Thank you to [Zulip](https://zulip.com) for sponsoring our project chat.**
+
 ## Google Group
 
 Questions can be asked on the [Orca HPC Users Google Group](https://groups.google.com/a/pdx.edu/forum/#!forum/Orca-HPC-Users-Group).
-
-## Zulip Chat
-
-We also have a [Zulip chat](https://orca.zulipchat.com/join/22lmb4v2horqxs57fqubvvl7/) (similar to Slack), where users can ask questions and get support.
-**Thank you to [Zulip](https://zulip.com) for sponsoring our project chat.**
 
 ## Contact Us
 
