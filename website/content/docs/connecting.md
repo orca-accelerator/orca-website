@@ -48,6 +48,14 @@ You can either create a new key pair, or you can use an existing key pair if you
    * For more information, further documentation and tutorials can be found online ([AWS](https://docs.aws.amazon.com/transfer/latest/userguide/sshkeygen.html), [DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-configure-ssh-key-based-authentication-on-a-linux-server)).
 2. **Upload the public key to Orca.** Using the web-based [Orca Registry](https://orca.pdx.edu/registry), upload the public key file to your account.
    You can have multiple public keys associated with your account.
+   To upload your SSH public key to the Orca cluster:
+    1. Log in to the Orca Registry: https://orca.pdx.edu/registry
+    2. Click on your name in the top right of the page
+    3. Select "My Profile (Orca)"
+    4. Select "Authenticators" from the menu on the right side
+    5. Select "Manage"
+    6. Select "Add SSH Key"
+    7. Choose your SSH public key, and select "Upload"
 3. **Connect via ssh.** After completing the steps above, you should be able to connect via `ssh` by following the steps [described above](#secure-shell-ssh); you should be logged in automatically without being prompted to enter a password.
   If you have trouble logging in after following these steps, [contact us to get help]({{< ref getting-help >}}).
 
