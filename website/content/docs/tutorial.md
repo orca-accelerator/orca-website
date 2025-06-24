@@ -21,7 +21,7 @@ After your account has been created and activated, continue on to [Step 2](#step
 
 After account creation, you need to set up an SSH key pair to use with Orca.
 If you have an SSH key pair already, [upload the public key to the Orca Registry]({{< ref "about/requesting-access#step-3-upload-ssh-public-key" >}}).
-If not, then generate a new key pair by running `ssh-keygen` in the terminal, and then upload the newly generated public key.
+If not, then generate a new key pair by running `ssh-keygen` in the terminal, and then [upload the newly generated public key]({{< ref "about/requesting-access#step-3-upload-ssh-public-key" >}}).
 See [the documentation on connecting via SSH]({{< ref "connecting/#authentication-with-ssh-keys" >}}) for more information.
 
 ## Step 3. Connecting to Orca

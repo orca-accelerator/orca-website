@@ -37,7 +37,7 @@ Once administrators approve the account creation you will be notified by email.
 ## Step 3. Upload SSH Public Key
 
 Access to the Orca cluster requires SSH authentication.
-Once the account is created, [upload your SSH public key](https://orca.pdx.edu/registry) using the web interface.
+Once your account is created, you can upload your SSH public key using Orca's web interface as described below.
 For information on creating SSH key pairs and using SSH authentication, [see the documentation on connecting to Orca]({{< ref "connecting/#authentication-with-ssh-keys" >}}).
 To upload your SSH public key to the Orca cluster using the web interface, follow these steps:
 
