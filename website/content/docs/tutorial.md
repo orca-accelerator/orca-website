@@ -14,15 +14,15 @@ weight: 1
 ## Step 1. Requesting Access to Orca
 
 The first step is to request access to Orca.
-See the page on {{< autolink "about/requesting-access.md" >}}.
+See the page on {{< autolink "about/requesting-access" >}}.
 After your account has been created and activated, continue on to [Step 2](#step-2-set-up-ssh-authentication).
 
 ## Step 2. Set up SSH Authentication
 
 After account creation, you need to set up an SSH key pair to use with Orca.
-If you have a SSH key pair already, [upload the public key to the Orca Registry](https://orca.pdx.edu/registry).
-If not, then generate a new key pair by running `ssh-keygen` in the terminal, and then upload the newly generated public key to the [Orca registry](https://orca.pdx.edu/registry).
-See [the documentation]({{< ref "connecting/#authentication-with-ssh-keys" >}}) for more information.
+If you have an SSH key pair already, [upload the public key to the Orca Registry]({{< ref "about/requesting-access#step-3-upload-ssh-public-key" >}}).
+If not, then generate a new key pair by running `ssh-keygen` in the terminal, and then upload the newly generated public key.
+See [the documentation on connecting via SSH]({{< ref "connecting/#authentication-with-ssh-keys" >}}) for more information.
 
 ## Step 3. Connecting to Orca
 
