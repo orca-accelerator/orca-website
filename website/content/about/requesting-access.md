@@ -16,7 +16,7 @@ Just follow the steps listed below.
 
 ## Step 1. Create an Account
 
-Fill out the [account creation form](https://orca.pdx.edu/registry/co_petitions/start/coef:13).
+Fill out the [**account creation form**](https://orca.pdx.edu/registry/co_petitions/start/coef:13).
 You will be prompted to log in using your institutional login.
 
 > [!INFO] Choosing a Username
