@@ -7,6 +7,14 @@
    -moz-columns: 2;
 }
 
+@media (max-width: 500px), (min-width: 896px) and (max-width: 990px) {
+  .home-links {
+    columns: 1;
+    -webkit-columns: 1;
+    -moz-columns: 1;
+  }
+}
+
 .home-links li {
    margin: 0px;
    padding-top: 5px;
@@ -52,7 +60,7 @@
    </li>
    <li>
       <a href="{{ (.Site.GetPage "docs/tutorial.md").RelPermalink }}">
-         <span class="icon">pin_drop</span><span class="text">Getting Started (Tutorial)</span>
+         <span class="icon">pin_drop</span><span class="text">Getting Started</span>
       </a>
    </li>
    <li>
