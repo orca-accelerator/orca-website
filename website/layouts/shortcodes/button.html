@@ -15,7 +15,7 @@ a.markdown-btn:link { color: #fff; }
 a.markdown-btn:visited { color: #fff; }
 a.markdown-btn:active, a.markdown-btn:hover {
    color: #fff;
-   background-color: #368524;
+   background-image: linear-gradient(rgb(0 0 0/20%) 0 0);
    text-decoration: none;
 }
 
@@ -27,7 +27,11 @@ a.markdown-btn:active, a.markdown-btn:hover {
 </style>
 
 {{ $ref := .Get "href" }}
+{{ $bgstyle := "" }}
+{{ with .Get "color" }}
+   {{ $bgstyle = fmt.Printf "background-color: %s;" . | safeCSS }}
+{{ end }}
 
 <div class="centered">
-<a href="{{ $ref }}" class="markdown-btn">{{- .Inner | safeHTML -}}</a>
+<a href="{{ $ref }}" class="markdown-btn" style="{{ $bgstyle }}">{{- .Inner | safeHTML -}}</a>
 </div>

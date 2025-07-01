@@ -16,7 +16,8 @@ weight: 10
 
 > [!INFO] Connecting to Open OnDemand
 >
-> To use Open OnDemand, connect to Orca's Open OnDemand instance at https://openondemand.orca.pdx.edu/
+> To use Open OnDemand, connect to Orca's Open OnDemand instance at https://openondemand.orca.pdx.edu/ or click the button below
+> {{< button href="https://openondemand.orca.pdx.edu/" color="#04A5E5" >}}Connect to Open OnDemand{{< /button >}}
 
 Currently, Orca's Open OnDemand supports
 
