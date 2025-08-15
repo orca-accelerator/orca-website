@@ -19,3 +19,6 @@ type: docs
 
 > [!IDEA] Citing Orca
 > If your research work, report, journal article, or publication has benefitted from the use of Orca resources, please consider [acknowledging the Orca project]({{< ref "citing.md" >}}).
+
+> [!INFO] News
+> {{< newsitems >}}

@@ -1,0 +1,10 @@
+{{ $section := .Site.GetPage "section" "news" }}
+{{ if $section }}
+<ul>
+  {{ range $section.RegularPages.ByDate.Reverse }}
+    <li>
+      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    </li>
+  {{ end }}
+</ul>
+{{ end }}
