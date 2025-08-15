@@ -32,7 +32,7 @@ See the page on [submitting jobs]({{< ref "submitting-jobs#specifying-job-resour
 
 When using `nvcc` to compile your code for Nvidia GPUs, you must specify the architecture you want to target.
 If you don't specify anything, `sm_52` will be used, which will work on all GPUs on Orca, but may not give optimal performance.
-**For best performancem, compile for the specific GPU architecture you are targetting.**
+**For best performance, compile for the specific GPU architecture you are targeting.**
 Since Orca has two types of GPUs, you may compile your code to **target both types of GPUs in one binary**.
 
 Each Nvidia GPU has "_virtual compute architecture_" and a "_real GPU architecture_" (also sometimes called its "gencode").
