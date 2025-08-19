@@ -25,13 +25,33 @@ You can also use Spack to build, install and manage your own software.
 Following the [Spack tutorial](https://spack-tutorial.readthedocs.io/en/latest/tutorial_basics.html#), you can run the following commands to setup your local Spack environment.
 
 ```bash
-$ git clone --depth=2 --branch=releases/v0.23 https://github.com/spack/spack.git ~/spack
+$ git clone --branch=releases/v1.0 https://github.com/spack/spack.git ~/spack
 $ source ~/spack/share/spack/setup-env.sh
 ```
+It is best to use and environment within you Spack install, this way you can use the Spack installation
+for multiple project.  To create and activate an environment.
+```
+spack env create myproject
+spack activate myproject
+```
 
-We have standardized on gcc 13.2.0 for use on ORCA cluster nodes.
+We have standardized on gcc 13.4.0 for use on ORCA cluster nodes, which can be
+built as part of your project by doing
+```
+spack add gcc@13.4.0
+spack install
+```
+after you create and activate your environment.
 
-Now you will need to enable `gcc@13.2.0` for your Spack environment.
+However, the system default gcc 11.5.0 is sufficient for most builds.
+Running the command
+```
+spack compilers add
+```
+will find available compilers via the path.  For example if you prefer the Intel
+OneAPI icc compiler, make sure you load the module so the compiler is in the path
+and the compilers add above will find it.
+<!--
 Make sure the file `~/.spack/linux/compilers.yaml` contains the following.
 ```yaml
 compilers:
@@ -49,13 +69,15 @@ compilers:
     environment: {}
     extra_rpaths: []
 ```
+-->
 
 Now you can use Spack to install packages.
-Before installing a package, make sure it does not exist as a module already by checking the results of `module available`.
+Before installing a package, make sure it does not exist as a module already
+by checking the results of `module available`.
 
 As an example, we can install [NetCDF](https://www.unidata.ucar.edu/software/netcdf/), which is commonly used in climate research.
 ```bash
-$ spack list netcdf %gcc@13.2.0
+$ spack list netcdf %gcc@13.4.0
 netcdf-c    netcdf-cxx4     netcdf95         py-h5netcdf
 netcdf-cxx  netcdf-fortran  parallel-netcdf  py-netcdf4
 ==> 8 packages
