@@ -18,32 +18,35 @@ This is the description from its [about page](https://spack.io/about/):
 > It makes installing scientific software easy.
 > With Spack, you can build a package with multiple versions, configurations, platforms, and compilers, and all of these builds can coexist on the same machine.
 
+Spack has been used to build many of the modules available on the Orca cluster.  This document describes how to 
+use Spack to build a custom user environment for a specific purpose or project goal.
 
-Spack has been used to build many of the modules available on the Orca cluster.
+Refer to the [Spack tutorial](https://spack-tutorial.readthedocs.io/en/latest/tutorial_basics.html#), for more
+detail.
 
-You can also use Spack to build, install and manage your own software.
-Following the [Spack tutorial](https://spack-tutorial.readthedocs.io/en/latest/tutorial_basics.html#), you can run the following commands to setup your local Spack environment.
+However, we have already provided a mirror cache of many packages such as gcc, cmake, R, and others.  This mirror will be used automatically for your package builds.
+
+To setup your local Spack environment.
 
 ```bash
 $ git clone --branch=releases/v1.0 https://github.com/spack/spack.git ~/spack
 $ source ~/spack/share/spack/setup-env.sh
 ```
-It is best to use and environment within you Spack install, this way you can use the Spack installation
-for multiple project.  To create and activate an environment.
+It is best to use an environment within you Spack install, this way you can use the same Spack installation for multiple projects.  
+
+To create and activate an environment.
 ```
 spack env create myproject
 spack activate myproject
 ```
 
 We have standardized on gcc 13.4.0 for use on ORCA cluster nodes, which can be
-built as part of your project by doing
+built as part of your project, after you create and activate your environment as above, by doing
 ```
 spack add gcc@13.4.0
-spack install
+spack buildcache install -fu gcc@13.4.0
 ```
-after you create and activate your environment.
-
-However, the system default gcc 11.5.0 is sufficient for most builds.
+<!--
 Running the command
 ```
 spack compilers add
@@ -51,7 +54,6 @@ spack compilers add
 will find available compilers via the path.  For example if you prefer the Intel
 OneAPI icc compiler, make sure you load the module so the compiler is in the path
 and the compilers add above will find it.
-<!--
 Make sure the file `~/.spack/linux/compilers.yaml` contains the following.
 ```yaml
 compilers:
@@ -81,7 +83,12 @@ $ spack list netcdf %gcc@13.4.0
 netcdf-c    netcdf-cxx4     netcdf95         py-h5netcdf
 netcdf-cxx  netcdf-fortran  parallel-netcdf  py-netcdf4
 ==> 8 packages
-$ spack install netcdf-c netcdf-cxx netcdf-fortran
+$ spack add netcdf-c netcdf-cxx netcdf-fortran
+$ spack buildcache install -fu netcdf-c netcdf-cxx netcdf-fortran
 ```
 
-You will see the various NetCDF versions and dependencies installed into `~/spack/opt`.
+Run 
+```
+spack find
+```
+And you should see the various NetCDF versions and dependencies installed into `~/spack/opt`.
