@@ -84,7 +84,7 @@ netcdf-c    netcdf-cxx4     netcdf95         py-h5netcdf
 netcdf-cxx  netcdf-fortran  parallel-netcdf  py-netcdf4
 ==> 8 packages
 $ spack add netcdf-c netcdf-cxx netcdf-fortran
-$ spack buildcache install -fu netcdf-c netcdf-cxx netcdf-fortran
+$ spack install netcdf-c netcdf-cxx netcdf-fortran
 ```
 
 Run 
@@ -92,3 +92,18 @@ Run
 spack find
 ```
 And you should see the various NetCDF versions and dependencies installed into `~/spack/opt`.
+
+If you get and ugly error such as this, it means you need to change a config setting.
+```shell
+    $ spack install netcdf-c netcdf-cxx netcdf-fortran
+    ==> Error: Spack concretizer internal error. Please submit a bug report and include the command, environment if applicable and the following error message.
+        [netcdf-fortran, r@4.5.1, netcdf-c, netcdf-cxx, gcc@13.4.0/h7r4dhbptk7tw3pn6hwjwhxjjcqxo5fs, cmake@3.31.8/j52mb4xah6ejnqt3vrv5ngbjwm4asbwg] is unsatisfiable, errors are:
+        internal_error("Imposing constraint outside of imposed_nodes")
+        internal_error("Package must resolve to at most 1 hash"). Couldn't concretize without changing the existing environment. If you are ok with changing it, try `spack concretize --force`. You could consider setting `concretizer:unify` to `when_possible` or `false` to allow multiple versions of some packages.
+
+```
+Here you will need to run the command
+```
+spack config edit
+```
+and change `concretizer:unify` to `when_possible`.
