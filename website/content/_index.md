@@ -10,6 +10,8 @@ type: docs
    Orca is funded by the National Science Foundation and hosted at Portland State University.
 {{< /about >}}
 
+{{< symposium >}}
+
 > [!SUCCESS] Registration is Now Open
 > **Any student**, **instructor**, or **researcher** in the Oregon region can now **create an Orca account** through [online self-signup]({{< ref "about/requesting-access.md" >}}).
 >
