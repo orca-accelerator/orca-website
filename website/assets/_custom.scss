@@ -5,6 +5,7 @@
    border-radius: 4px;
    background: #eff8ff;
    border-left: 4px solid #006090;
+   margin-bottom: 12px;
 }
 
 .notice {
@@ -48,3 +49,30 @@ menu text. */
 
 .no-wrap-col-1 td:nth-of-type(1) { white-space: nowrap; }
 .no-wrap-col-2 td:nth-of-type(2) { white-space: nowrap; }
+
+/* Style for 'button' shortcode */
+a.markdown-btn {
+   color: #fff;
+   background-color: #40A02B;
+   border-radius: 10px;
+   text-align: center;
+   padding: 5px 1em 5px 1em;
+   text-decoration: none;
+   border: none;
+   cursor: pointer;
+
+}
+
+a.markdown-btn:link { color: #fff; }
+a.markdown-btn:visited { color: #fff; }
+a.markdown-btn:active, a.markdown-btn:hover {
+   color: #fff;
+   background-image: linear-gradient(RGB(0 0 0/20%) 0 0);
+   text-decoration: none;
+}
+
+.centered {
+   margin-left: auto;
+   margin-right: auto;
+   text-align: center;
+}
