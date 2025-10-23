@@ -40,12 +40,21 @@ spack env create myproject
 spack activate myproject
 ```
 
-We have standardized on gcc 13.4.0 for use on ORCA cluster nodes, which can be
-built as part of your project, after you create and activate your environment as above, by doing
+We have standardized on gcc 13.4.0 for use on ORCA cluster nodes, which is available as
+a module.
 ```
-spack add gcc@13.4.0
-spack buildcache install -fu gcc@13.4.0
+module load gcc
+spack compiler find
+spack compiler remove gcc@11.5.0
 ```
+
+We also want to use the existing Spack binary packages that have been built and installed
+on Orca.
+```bash
+cp /software/spack/defaults/.spack/upstreams.yaml ~/.spack
+```
+<!-- spack buildcache install -fu gcc@13.4.0 -->
+
 <!--
 Running the command
 ```
@@ -93,7 +102,7 @@ spack find
 ```
 And you should see the various NetCDF versions and dependencies installed into `~/spack/opt`.
 
-If you get and ugly error such as this, it means you need to change a config setting.
+If you get an ugly error such as this, it means you need to change a config setting.
 ```shell
     $ spack install netcdf-c netcdf-cxx netcdf-fortran
     ==> Error: Spack concretizer internal error. Please submit a bug report and include the command, environment if applicable and the following error message.
