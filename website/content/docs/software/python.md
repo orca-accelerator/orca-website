@@ -22,40 +22,52 @@ For a great Python tutorial on how to use the Python language itself, visit [lea
 
 Python 2 is an older version of Python. In general, it is highly recommended to use Python 3 since it has major changes and improvements and has the best support for packages and libraries.
 
-Miniconda is deprecated, use Conda or Mamba from the provided Python distribution. Conda is a virtual environment and package manager for Python.  Conda is not a prefered environment, see Virtual Environments below.
+Miniconda is deprecated, use Conda or Mamba from the provided Python distribution. Conda is a virtual environment and package manager for Python.  Conda is not a preferred environment, see Virtual Environments below.
 
 ### Loading the Python environment module
 
-Python 3 is installed by default to all Linux machines, so it is available on all of OIT-RC's Linux systems as well.  Again, using Python 2 is highly discouraged, unless it is needed for older code. Upon logging in to a system you can check the python version.
-
-```bash
-$ /usr/bin/python --version
-Python 3.9.18
-```
+Rocky Linux installs Python 3 by default, so it is available on Orca Linux systems as well.  Using Python 2 is highly discouraged.
 
 It is recommended to load the module for python to get the most complete set of math and science libraries.
 
 ```bash
 $ module load python
-$ python --version
+$ module list python
+
+Currently Loaded Modules Matching: python
+  1) python/3.13.5-gcc-13.4.0
+```
+The Intel Python Distribution is also available.
+```bash
+module load intel-python
+python --version
 Python 3.9.19 :: Intel Corporation
 ```
 
-The OS provided /usr/bin/python3 will still provide Python 3 but will not have conda or mamba nor all the science, data, and math libraries.
-
-* The python module, which provides /software/python/intel/3.9.19/intelpython3/bin/python, is recommended as it has the best performance and solid support, plus most all math, science, and data packages have been added.
-
-* If some software or package being used requires a certain version of Python 3, then a virtual environment is recommended, either venv or uv, see below.
+* If some software or package being used requires a certain version of Python 3, then a virtual environment is recommended, either UV, venv, see below.
 
 Virtual Environments
 ====================
 
 Virtual environments are how individual users can install and load different sets of packages as needed into a small, clean, and self-contained environment that is easy to use for you and others on your project.
 
-Virtual Environment Using `venv` **(Recommended)**
-------------------------------------------------
+Virtual Environment using uv **(Recommended)**
+----------------------------
+The preferred way of using virtual environments in Python is with UV. 
+UV is a very fast Python package manager and replacement for 'Conda', that provides a choice of python versions and automatically creates and uses a virtual environment.  Do the following to start using UV.
+```bash
+$ source /software/builds/uv/env
+$ mkdir project
+$ cd project
+$ uv init .
+$ uv python install 3.12 # if this is the version needed
+$ uv python pin 3.12
+$ uv install pandas scipy dask matplotlib # for example
+$ uv run myscript.py
+```
 
-The preferred way of using virtual environments in Python is with the venv package. 
+Virtual Environment Using `venv`
+------------------------------------------------
 
 First, a virtual environment (venv) needs to be made (-m) and named anything; here, it is named myPythonEnv.
 ```bash
@@ -77,38 +89,31 @@ Finally, when you are done with your session, deactivate the venv.  To deactivat
 (myPythonEnv) $ deactivate
 $
 ```
-Virtual Environment using uv
-----------------------------
-
-UV is a Python package manager that provides a choice of python versions and automatically creates and uses a virtual environment.  Do the following to start using UV.
-```bash
-$ source /software/builds/uv/env
-$ mkdir project
-$ cd project
-$ uv init .
-$ uv python install 3.12 # if this is the version needed
-$ uv python pin 3.12
-$ uv install pandas scipy dask matplotlib # for example
-$ uv run myscript.py
-```
 Virtual Environment using Conda
 -------------------------------
 
-An alternative method for creating a virtual environment is using Conda, both the Intel Python and the Miniconda modules provide this capability, however, using Conda to install packages is very slow.
+Conda is not recommended, however it may be necessary if using packages from
+specific Conda channels such as bioconda.
+
+Intel Python (module load intel-python) and the Miniconda modules (module load miniconda3)
+hprovide this capability, however, using Conda to install packages is very slow.
 
 The following example will generally work for both, we will use Intel Python.
 ```bash
-$ module load python
+$ module load intel-python
 $ conda create -p $HOME/myConda -c conda-forge
 $ conda init bash
 $ source $HOME/.bashrc
 $ conda install pyperformance pandas dask ray scipy scikit-learn
+# 'conda -c bioconda' if you need those libraries.
 ```
 Be sure you do not mix conda and pip install commands which can lead to a confused environment.  There is one exception, if a package is only available with pip.
 
-## Virtual Environment using Mamba **(Advanced)**
+## Virtual Environment using Mamba
 
-Mamba is also made available after doing the module load python step.  Mamba is a faster alternative to using Conda, you can replace the conda commands above with mamba.
+Mamba is also made available after doing the module load intel-python step.
+Mamba is a faster alternative to using Conda, you can safely replace the conda commands
+above with mamba.
 
 ## Using Python on a Cluster with Slurm
 
@@ -159,15 +164,11 @@ The sbatch script submit.sh then uses a job array to create 4 copies (subtasks) 
 
 For more on job arrays, refer [here](https://sites.google.com/pdx.edu/research-computing/faqs/coeus-hpc-faqs/job-arrays).
 
-
-
 ## Python and MPI with `mpi4py`?
 
 mpi4py is a Python package that allows for MPI Python programs.
 
 The site for mpi4py is [here](https://mpi4py.readthedocs.io/en/stable/), which contains more usage documentation.
-
-
 
 ### Getting Started - Create a Virtual Environment and Install mpi4py
 
@@ -178,8 +179,6 @@ $ # Refer to the section of this document about creating a virtual environment.
 ```
 
 Note that mpich/gcc-6.3.0 can work instead of mvapich2-2.2-psm/gcc-6.3.0. The OpenMpi environment modules will not work with mpi4py.
-
-
 
 ### Using a Virtual Environment in Python and sbatch Scripts
 
