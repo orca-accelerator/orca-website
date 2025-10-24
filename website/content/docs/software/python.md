@@ -89,26 +89,31 @@ Finally, when you are done with your session, deactivate the venv.  To deactivat
 (myPythonEnv) $ deactivate
 $
 ```
-<!--
 Virtual Environment using Conda
 -------------------------------
 
-An alternative method for creating a virtual environment is using Conda, both the Intel Python and the Miniconda modules provide this capability, however, using Conda to install packages is very slow.
+Conda is not recommended, however it may be necessary if using packages from
+specific Conda channels such as bioconda.
+
+Intel Python (module load intel-python) and the Miniconda modules (module load miniconda3)
+hprovide this capability, however, using Conda to install packages is very slow.
 
 The following example will generally work for both, we will use Intel Python.
 ```bash
-$ module load python
+$ module load intel-python
 $ conda create -p $HOME/myConda -c conda-forge
 $ conda init bash
 $ source $HOME/.bashrc
 $ conda install pyperformance pandas dask ray scipy scikit-learn
+# 'conda -c bioconda' if you need those libraries.
 ```
 Be sure you do not mix conda and pip install commands which can lead to a confused environment.  There is one exception, if a package is only available with pip.
 
-## Virtual Environment using Mamba **(Advanced)**
+## Virtual Environment using Mamba
 
-Mamba is also made available after doing the module load python step.  Mamba is a faster alternative to using Conda, you can replace the conda commands above with mamba.
--->
+Mamba is also made available after doing the module load intel-python step.
+Mamba is a faster alternative to using Conda, you can safely replace the conda commands
+above with mamba.
 
 ## Using Python on a Cluster with Slurm
 
