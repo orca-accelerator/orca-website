@@ -26,9 +26,32 @@ use Spack to build a custom user environment for a specific purpose or project g
 Refer to the [Spack tutorial](https://spack-tutorial.readthedocs.io/en/latest/tutorial_basics.html#), for more
 detail.
 
-## Setting up Spack on Orca
+On Orca, we have provided an upstream binary cache of many packages such as gcc, cmake, R,
+and others. These binaries will be incorporated automatically for your package builds.
 
-On Orca, we have provided a mirror cache of many packages such as gcc, cmake, R, and others. This mirror will be used automatically for your package builds.
+## Setting up Spack on Orca (easy way with modules)
+
+```bash
+module load spack
+```
+As an example, we can install [NetCDF](https://www.unidata.ucar.edu/software/netcdf/),
+which is commonly used in climate research.
+```bash
+$ spack list netcdf %gcc@13.4.0
+netcdf-c    netcdf-cxx4     netcdf95         pdiplugin-decl-netcdf  py-netcdf4
+netcdf-cxx  netcdf-fortran  parallel-netcdf  py-h5netcdf
+==> 9 packages
+$ spack install netcdf-c netcdf-cxx netcdf-fortran
+```
+Run `spack find -p netcdf-c` and you should see NetCDF
+installed into `~/spack/opt`.
+
+Use `spack load` to load a package.
+```bash
+eval $(spack load --sh netcdf-c)
+```
+
+## Setting up Spack on Orca (detailed using the Git repo)
 
 To download and activate Spack, run the following commands:
 
@@ -57,14 +80,16 @@ spack env activate myproject
 ```
 
 Now you can use Spack to install packages.
-Before installing a package, make sure it does not exist as a module already by checking the results of `module available`.
+Before installing a package, make sure it does not exist as a module already
+by checking the results of `module available`.
 
-As an example, we can install [NetCDF](https://www.unidata.ucar.edu/software/netcdf/), which is commonly used in climate research.
+As an example, we can install [NetCDF](https://www.unidata.ucar.edu/software/netcdf/),
+which is commonly used in climate research.
 ```bash
 $ spack list netcdf %gcc@13.4.0
-netcdf-c    netcdf-cxx4     netcdf95         py-h5netcdf
-netcdf-cxx  netcdf-fortran  parallel-netcdf  py-netcdf4
-==> 8 packages
+netcdf-c    netcdf-cxx4     netcdf95         pdiplugin-decl-netcdf  py-netcdf4
+netcdf-cxx  netcdf-fortran  parallel-netcdf  py-h5netcdf
+==> 9 packages
 $ spack add netcdf-c netcdf-cxx netcdf-fortran
 $ spack install netcdf-c netcdf-cxx netcdf-fortran
 ```
