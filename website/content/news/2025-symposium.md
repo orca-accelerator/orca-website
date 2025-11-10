@@ -6,8 +6,12 @@ date: "2025-10-08"
 
 # Orca Research Symposium
 
-The first Orca Research Symposium will be held on Saturday, October 25th on the
-campus of Reed College in Portland, OR. The symposium is a meeting of current
+The first Orca Research Symposium was held on Saturday, October 25th on the
+campus of Reed College in Portland, OR.
+
+For a recap of the event, please see the post from [Link Oregon on LinkedIn](https://www.linkedin.com/posts/linkoregon_oregontech-hpc-activity-7389337737096654849-Eu9v?utm_source=share&utm_medium=member_desktop&rcm=ACoAABOXWX4BrUyJ22d-vhtXQ0rb0QTk5uO2-LI).
+
+The symposium is a meeting of current
 and potential users of Orca with the goal of sharing experiences and best
 practices related to high-performance compute research in general and the Orca
 cluster in particular.
