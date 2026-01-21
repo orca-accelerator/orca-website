@@ -22,7 +22,7 @@ For a great Python tutorial on how to use the Python language itself, visit [lea
 
 Python 2 is an older version of Python. In general, it is highly recommended to use Python 3 since it has major changes and improvements and has the best support for packages and libraries.
 
-Miniconda is deprecated, use Conda or Mamba from the provided Python distribution. Conda is a virtual environment and package manager for Python.  Conda is not a preferred environment, see Virtual Environments below.
+Conda is a virtual environment and package manager for Python.  Conda is not a preferred environment but is provided for backward compatibility with some scripts and open source.  Please see Virtual Environments below for a better choice.  Use of Miniconda is deprecated entirely. 
 
 ### Loading the Python environment module
 
@@ -44,14 +44,14 @@ python --version
 Python 3.9.19 :: Intel Corporation
 ```
 
-* If some software or package being used requires a certain version of Python 3, then a virtual environment is recommended, either UV, venv, see below.
+* If some software or package being used requires a certain version of Python 3, then a virtual environment is recommended, either UV, or venv. See below.
 
 Virtual Environments
 ====================
 
 Virtual environments are how individual users can install and load different sets of packages as needed into a small, clean, and self-contained environment that is easy to use for you and others on your project.
 
-Virtual Environment using uv **(Recommended)**
+Virtual Environment using "uv" **(Recommended)**
 ----------------------------
 The preferred way of using virtual environments in Python is with UV. 
 UV is a very fast Python package manager and replacement for 'Conda', that provides a choice of python versions and automatically creates and uses a virtual environment.  Do the following to start using UV.
@@ -62,7 +62,8 @@ $ cd project
 $ uv init .
 $ uv python install 3.12 # if this is the version needed
 $ uv python pin 3.12
-$ uv install pandas scipy dask matplotlib # for example
+$ uv venv  # create the virtual environment
+$ uv pip install pandas scipy dask matplotlib # for example
 $ uv run myscript.py
 ```
 
