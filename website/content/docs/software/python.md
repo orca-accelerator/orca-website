@@ -85,7 +85,7 @@ Once a virtual environment is running, use pip to install needed libraries, gene
 (myPythonEnv) $ pip install --upgrade pip
 (myPythonEnv) $ pip install pyperformance pandas dask ray scipy scikit-learn
 ```
-Finally, when you are done with your session, deactivate the venv.  To deactivate a venv, deactivate is used. Alternatively, if the shell ends or the sbatch script ends, the virtual environment will be deactivated as well.  This has finished once the venv name before the shell prompt will be removed.
+When you are done with your session, deactivate the venv use the *deactivate* command. Once the shell exits or the sbatch script ends, the virtual environment will be deactivated as well. Your will see the *venv* name before the shell prompt has been removed.
 ```bash
 (myPythonEnv) $ deactivate
 $
