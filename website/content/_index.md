@@ -10,6 +10,11 @@ type: docs
    Orca is funded by the National Science Foundation and hosted at Portland State University.
 {{< /about >}}
 
+> [!CAUTION] Cluster Maintenance Ongoing
+> **Date:** 1/27/2026. The cluster is undergoing [scheduled maintenance]({{< ref "news/2026-01-27-14-00-00.md" >}}).
+>
+> **Estimated Completion:** End of day, Wednesday, January 28th.
+
 > [!SUCCESS] Registration is Now Open
 > **Any student**, **instructor**, or **researcher** in the Oregon region can now **create an Orca account** through [online self-signup]({{< ref "about/requesting-access.md" >}}).
 >
