@@ -18,43 +18,69 @@ For a great Python tutorial on how to use the Python language itself, visit [lea
 
 ## Getting Started
 
-### What's the different between Python 2 and Python 3? What is Conda?
+### Loading the Python Module
 
-Python 2 is an older version of Python. In general, it is highly recommended to use Python 3 since it has major changes and improvements and has the best support for packages and libraries.
+As part of the base Rocky Linux installation, Orca includes Python 3.9.23 by default.
+Orca also includes other versions of Python, available through the [module system]({{< ref modules >}}).
+To see the available versions of Python, run `module avail python` in the terminal.
+```
+$ module avail python
 
-Conda is a virtual environment and package manager for Python.  Conda is not a preferred environment but is provided for backward compatibility with some scripts and open source.  Please see Virtual Environments below for a better choice.  Use of Miniconda is deprecated entirely. 
+--------- /software/spack/v1.0/modules/linux-rocky9-x86_64/gcc/13.4.0 ----------
+   python/3.12.9-gcc-13.4.0-5rbfaiu    python/3.13.5-gcc-13.4.0-3crd7yj (D)
 
-### Loading the Python environment module
+---------------------------- /software/modulefiles -----------------------------
+   intel-python/24.0.0
+```
+One of these versions of Python can be loaded by running, for example, `module load python/3.13.5`.
+The Intel Python Distribution is also available through the `intel-python` module; this Python distribution includes many commonly used scientific Python packages.
 
-Rocky Linux installs Python 3 by default, so it is available on Orca Linux systems as well.  Using Python 2 is highly discouraged.
+> [!IDEA] Python 3 and Python 2
+> Python 2 is an older version of Python.
+> In general, it is highly recommended to use Python 3 since it has major changes and improvements and has the best support for packages and libraries.
+> Using Python 2 is highly discouraged.
 
-It is recommended to load the module for python to get the most complete set of math and science libraries.
+## Installing Python Packages
+
+Individual users can install and use Python packages using **virtual environments**.
+Virtual environments are an easy-to-use way to organize different sets of packages into a small, clean, and self-contained environments.
+The standard way to create virtual environments and install packages is through `venv`.
+
+### Virtual Environments Using `venv`
+
+To install packages that are needed for a specific project, first create a virtual environment (a "venv").
+In this example, the environment is named `my-python-env`; you can pick a relevant name for your project.
 
 ```bash
-$ module load python
-$ module list python
-
-Currently Loaded Modules Matching: python
-  1) python/3.13.5-gcc-13.4.0
+$ python3 -m venv my-python-env
 ```
-The Intel Python Distribution is also available.
+
+After creating the environment, it needs to be **activated**.
+To activate an environment, run
+
 ```bash
-module load intel-python
-python --version
-Python 3.9.19 :: Intel Corporation
+$ source my-python-env/bin/activate
 ```
 
-* If some software or package being used requires a certain version of Python 3, then a virtual environment is recommended, either UV, or venv. See below.
+To use an environment, it must be activated in every session (for example, in interactive or batch jobs).
+After activation, the name of the active environment will appear to the left of your shell prompt.
 
-Virtual Environments
-====================
+Once an environment has been activated, you can install packages using `pip`.
+For example
 
-Virtual environments are how individual users can install and load different sets of packages as needed into a small, clean, and self-contained environment that is easy to use for you and others on your project.
+```bash
+(my-python-env) $ pip install numpy pandas matplotlib
+```
 
-Virtual Environment using "uv" **(Recommended)**
-----------------------------
-The preferred way of using virtual environments in Python is with UV. 
-UV is a very fast Python package manager and replacement for 'Conda', that provides a choice of python versions and automatically creates and uses a virtual environment.  Do the following to start using UV.
+will install the `numpy`, `pandas`, and `matplotlib` packages.
+These packages will be available from within the `my-python-env` environment, but not from within any other environment.
+
+Once you are done working in the environment, you can run the `deactivate` command to deactivate the current environment.
+
+## Using Python with `uv`
+
+`uv` is a very fast Python package manager and replacement for 'pip', `pipx`, `conda`, and other tools.
+It provides a choice of python versions and automatically creates and uses a virtual environment.  Do the following to start using UV.
 ```bash
 $ source /software/builds/uv/env
 $ mkdir project
@@ -67,37 +93,11 @@ $ uv pip install pandas scipy dask matplotlib # for example
 $ uv run myscript.py
 ```
 
-Virtual Environment Using `venv`
-------------------------------------------------
-
-First, a virtual environment (venv) needs to be made (-m) and named anything; here, it is named myPythonEnv.
-```bash
-$ module load python
-$ python -m venv myPythonEnv
-```
-Next, the venv needs to be activated.  If an sbatch script wants to use a virtual environment, it must have this line in the sbatch script.  An active venv in the shell will have the venv name in parenthesis before the shell prompt symbol ($).
-```bash
-$ source myPythonEnv/bin/activate
-(myPythonEnv) $
-```
-Once a virtual environment is running, use pip to install needed libraries, generally you will want pandas (includes numpy), scipy, scikit-learn, dask, and ray.
-```bash
-(myPythonEnv) $ pip install --upgrade pip
-(myPythonEnv) $ pip install pyperformance pandas dask ray scipy scikit-learn
-```
-When you are done with your session, deactivate the venv use the *deactivate* command. Once the shell exits or the sbatch script ends, the virtual environment will be deactivated as well. Your will see the *venv* name before the shell prompt has been removed.
-```bash
-(myPythonEnv) $ deactivate
-$
-```
-Virtual Environment using Conda
--------------------------------
+## Using Python with Conda
 
 Conda is not recommended, however it may be necessary if using packages from
 specific Conda channels such as bioconda.
-
-Intel Python (module load intel-python) and the Miniconda modules (module load miniconda3)
-hprovide this capability, however, using Conda to install packages is very slow.
+Conda is available on Orca through the Intel Python distribution.
 
 The following example will generally work for both, we will use Intel Python.
 ```bash
@@ -110,13 +110,13 @@ $ conda install pyperformance pandas dask ray scipy scikit-learn
 ```
 Be sure you do not mix conda and pip install commands which can lead to a confused environment.  There is one exception, if a package is only available with pip.
 
-## Virtual Environment using Mamba
+### Mamba as a Conda Replacement
 
 Mamba is also made available after doing the module load intel-python step.
 Mamba is a faster alternative to using Conda, you can safely replace the conda commands
 above with mamba.
 
-## Using Python on a Cluster with Slurm
+## Using Python with Slurm
 
 There are two ways of using Python on a cluster: either having several copies of the same Python script running (like with a job array), or having a Python script use MPI (message passing interface) to communicate between several children.
 
@@ -165,7 +165,7 @@ The sbatch script submit.sh then uses a job array to create 4 copies (subtasks) 
 
 For more on job arrays, refer [here](https://sites.google.com/pdx.edu/research-computing/faqs/coeus-hpc-faqs/job-arrays).
 
-## Python and MPI with `mpi4py`?
+## Python and MPI with `mpi4py`
 
 mpi4py is a Python package that allows for MPI Python programs.
 
