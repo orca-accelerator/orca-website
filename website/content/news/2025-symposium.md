@@ -1,7 +1,7 @@
 ---
-title: 10/8/2025 - First Orca Research Symposium
+title: 10/25/2025 - First Orca Research Symposium
 bookHidden: true
-date: "2025-10-08"
+date: "2025-10-25"
 ---
 
 # Orca Research Symposium
