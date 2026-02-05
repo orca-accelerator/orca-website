@@ -117,7 +117,7 @@ This can be achieved through a [Slurm batch script]({{< ref "submitting-jobs" >}
 #SBATCH --job-name job_array_python  # Job name.
 #SBATCH --partition short    # Use a short partition since this is not a long running job.
 #SBATCH --ntasks 1           # Allocate one CPU core per subtask.
-#SBATCH --output out-%a.txt  # Specify that standard output should go.
+#SBATCH --output out-%a.txt  # Specify where standard output should go.
 #SBATCH --error err-%a.txt   # Specify where error output should go.
 #SBATCH --array=0-3          # Run multiple copies of the script, indexed from 0 to 3.
 
