@@ -21,7 +21,7 @@
       {{- end -}}
     </figcaption>
   {{- end -}}
-  <pre class="{{ $preclassname }}"><code class="language-{{ .Type }}" data-lang="{{ .Type }}"></code>
+  <pre class="{{ $preclassname }}"><code class="language-{{ .Type }}" data-lang="{{ .Type }}">
     {{- if (transform.CanHighlight .Type) -}}
       {{- with transform.HighlightCodeBlock . -}}
         {{ .Inner }}
