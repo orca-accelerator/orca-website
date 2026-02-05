@@ -152,7 +152,6 @@ For more information, see the PSU Research Computing documentation on the [Slurm
 
 Once you have an allocation, you can run parallel (MPI) jobs using the `srun` command to launch parallel jobs.
 The number of MPI ranks is supplied through the `--ntasks` or `-n` flag.
-Note that commands such as `mpirun` and `mpiexec` are **not available** on Orca, and `srun` should be used instead.
 
 ### Binding GPUs to Parallel Jobs
 
