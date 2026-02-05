@@ -140,7 +140,7 @@ Note that the node lists assigned to the partitions overlap.
 The `short` partition has exclusive access to nodes 6-9.
 The `sinfo` command will display an overview of partitions.
 
-Orca also has an `osg` partition, that is dedicated for extramural jobs running on the [OSG (formerly the Open Science Grid)](https://osg-htc.org).
+Orca also has an `osg` partition that is reserved for extramural jobs running on the [OSG (formerly the Open Science Grid)](https://osg-htc.org).
 This partition is used for high-throughput computing (HTC) jobs, and is not directly available from Orca;
 users who have HTC jobs and wish to use the `osg` partition (and other OSG resources) can do so through the OSG directly.
 
