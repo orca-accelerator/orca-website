@@ -60,7 +60,6 @@ a.markdown-btn {
    text-decoration: none;
    border: none;
    cursor: pointer;
-
 }
 
 a.markdown-btn:link { color: #fff; }
@@ -94,8 +93,9 @@ figcaption.codeblock-header {
    padding-bottom: 0.25em;
    border: 1px solid #888;
    border-radius: 0;
-   padding-top: 0.7em;
-   padding-bottom: 0.7em;
+   border-bottom: 0px;
+   padding-top: 0.5em;
+   padding-bottom: 0.5em;
 }
 
 .codeblock-header-title {

@@ -2,6 +2,7 @@
 
 /* Chroma theme tokens */
 :root {
+  --chroma-bg: #f8f9fa; /* background color */
   --chroma-text: #000; /* text color (black) */
   --chroma-ink-1: #666; /* “token gray” (names/strings/etc.) */
   --chroma-ink-2: #888; /* comments/preproc */
@@ -10,14 +11,15 @@
 /* Dark mode */
 @media (prefers-color-scheme: dark) {
   :root {
+    --chroma-bg: #494e54; /* background color */
     --chroma-text: #fff;
     --chroma-ink-1: #e9ecef;
     --chroma-ink-2: #b7b7b7;
   }
 }
 
-/* Background */ .bg { background-color:#fff; }
-/* PreWrapper */ .chroma { background-color:#fff; color: var(--chroma-text) }
+/* Background */ .bg { background-color:var(--chroma-bg); }
+/* PreWrapper */ .chroma { background-color:var(--chroma-bg); color: var(--chroma-text) }
 /* LineLink */ .chroma .lnlinks { outline:none;text-decoration:none;color:inherit }
 /* LineTableTD */ .chroma .lntd { vertical-align:top;padding:0;margin:0;border:0; }
 /* LineTable */ .chroma .lntable { border-spacing:0;padding:0;margin:0;border:0; }
