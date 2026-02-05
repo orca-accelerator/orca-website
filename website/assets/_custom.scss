@@ -76,3 +76,48 @@ a.markdown-btn:active, a.markdown-btn:hover {
    margin-right: auto;
    text-align: center;
 }
+
+/* Style for codeblock titles */
+figure.codeblock {
+   font-size: 0.75rem;
+}
+
+figcaption.codeblock-header {
+   background-color: #555;
+   color: #eee;
+   font-weight: bold;
+   padding-left: 1em;
+   padding-top: 0.25em;
+   padding-bottom: 0.25em;
+}
+
+.codeblock-header-title {
+   font-size: 0.875rem;
+   font-weight: bold;
+}
+
+.codeblock-header-filename {
+   font-weight: bold;
+   font-size: 0.875rem;
+}
+
+.codeblock-header-fileicon {
+   font-family: 'Material Icons';
+   font-weight: normal;
+   font-size: 1.5em;
+   margin-right: 0.25em;
+   line-height: 1;
+   display: inline-block;
+   vertical-align: -3px;
+}
+
+pre.codeblock-with-header {
+  margin-top: 0;
+}
+
+pre.chroma {
+   border: 1px solid #888;
+   border-radius: 0;
+   padding-top: 0.7em;
+   padding-bottom: 0.7em;
+}
