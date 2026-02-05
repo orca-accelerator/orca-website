@@ -56,7 +56,7 @@ You can either create a new key pair, or you can use an existing key pair if you
     5. Select "Manage"
     6. Select "Add SSH Key"
     7. Choose your SSH public key, and select "Upload"
-3. **Connect via ssh.** After completing the steps above, you should be able to connect via `ssh` by following the steps [described above](#secure-shell-ssh); you should be logged in automatically without being prompted to enter a password.
+3. **Connect via ssh.** After completing the steps above, you should be able to connect via `ssh` by following the steps [described above](#secure-shell-ssh); you should be logged in automatically without being prompted to enter a password. _You may need to configure `ssh` to use the newly created key pair for authentication. See the documentation ([AWS](https://docs.aws.amazon.com/transfer/latest/userguide/sshkeygen.html), [DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-configure-ssh-key-based-authentication-on-a-linux-server)) for detailed instructions._
   If you have trouble logging in after following these steps, [contact us to get help]({{< ref getting-help >}}).
 
 ## Login Node
