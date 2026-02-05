@@ -45,7 +45,6 @@ The Intel Python Distribution is also available through the `intel-python` modul
 ## Installing Python Packages
 
 Individual users can install and use Python packages using **virtual environments**.
-Virtual environments are an easy-to-use way to organize different sets of packages into a small, clean, and self-contained environments.
 Virtual environments are an easy-to-use way to organize different sets of packages into a small, clean, and self-contained environment.
 The standard way to create virtual environments and install packages is through `venv`.
 
