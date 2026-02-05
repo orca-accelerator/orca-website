@@ -13,8 +13,9 @@ For a recap of the event, please see the post from [Link Oregon on LinkedIn](htt
 
 The symposium is a meeting of current
 and potential users of Orca with the goal of sharing experiences and best
-practices related to high-performance compute research in general and the Orca
+practices related to high-performance computing research in general and the Orca
 cluster in particular.
+
 
 ## Schedule and Venue
 
@@ -31,5 +32,5 @@ There is no cost to attend the symposium and lunch will be provided.
 Any current users of Orca are encouraged to give a short lightning talk
 describing their research. The exact length of the talk will depend on the
 number of speakers, but will be in the range of 5-10 minutes. If you're
-interested in giving a talk please reach out to [Greg
+interested in giving a talk, please reach out to [Greg
 Anderson](mailto:grega@reed.edu).

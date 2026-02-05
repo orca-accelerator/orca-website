@@ -55,7 +55,7 @@ module unload openmpi/4.1.4-gcc-13.2.0
 
 ## Software
 
-Modules load the selected software on each of these systems, mounted in the /software volume, where there is broad range of available software.  Some software in this volume include:
+Modules load the selected software on each of these systems, mounted in the /software volume, where there is a broad range of available software. Some software in this volume includes:
 
   + GCC 13.2.0 with earlier versions available
   + Python 3.9 with typical libraries such as numpy, scipy.

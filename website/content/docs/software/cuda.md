@@ -19,7 +19,7 @@ This will make available CUDA tools such as the CUDA compiler `nvcc` and the Nsi
 
 ## Using GPUs
 
-In order to use Orca's GPUs, they must be [requested as part of a Slurm job]({{< ref submitting-jobs >}}).
+In order to use Orca's GPUs, they must be [requested as part of a Slurm job]({{< ref "submitting-jobs" >}}).
 The number and type of GPUs can be specified using Slurm's generic resource (`gres`) scheduling.
 
 ### Seeing Allocated GPUs

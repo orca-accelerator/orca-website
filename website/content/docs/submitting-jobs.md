@@ -107,7 +107,7 @@ For example, to use a single GPU, add the line `#SBATCH --gres=gpu:1`.
 ### Batch Directives Quick Reference
 
 The following are useful directives for `sbatch` scripts.
-Many more options are available; see the [sbatch documentation](https://slurm.schedmd.com/sbatch.html) for a comprehensive list
+Many more options are available; see the [sbatch documentation](https://slurm.schedmd.com/sbatch.html) for a comprehensive list.
 
 * `--job-name=<name>` --- readable job name
 * `--partition=<short|medium|long>` --- partition selection
@@ -122,7 +122,7 @@ See [here](https://sites.google.com/pdx.edu/research-computing/getting-started/s
 
 ## Checking the Queue and Other Slurm Commands
 
-* `squeue` - Report the state of jobs or job steps. This is useful view check what’s in the current job queue, especially if you’re going to submit a larger job using many nodes.
+* `squeue` - Report the state of jobs or job steps. This is useful to check what’s in the current job queue, especially if you’re going to submit a larger job using many nodes.
 * `sinfo` - Report the state of partitions and nodes managed by Slurm. There are a number of filtering, sorting, and formatting options.
 * `scancel` - Cancel a submitted job (pending or running).
 

@@ -21,7 +21,7 @@ For a great Python tutorial on how to use the Python language itself, visit [lea
 ### Loading the Python Module
 
 As part of the base Rocky Linux installation, Orca includes Python 3.9.23 by default.
-Orca also includes other versions of Python, available through the [module system]({{< ref modules >}}).
+Orca also includes other versions of Python, available through the [module system]({{< ref "modules" >}}).
 To see the available versions of Python, run `module avail python` in the terminal.
 
 ```bash {title="Orca Shell"}
@@ -46,6 +46,7 @@ The Intel Python Distribution is also available through the `intel-python` modul
 
 Individual users can install and use Python packages using **virtual environments**.
 Virtual environments are an easy-to-use way to organize different sets of packages into a small, clean, and self-contained environments.
+Virtual environments are an easy-to-use way to organize different sets of packages into a small, clean, and self-contained environment.
 The standard way to create virtual environments and install packages is through `venv`.
 
 ### Virtual Environments Using `venv`
@@ -92,14 +93,14 @@ See the [`uv` documentation](https://docs.astral.sh/uv/reference/) for more info
 
 Python can benefit from the parallelism on the Orca cluster in two ways:
 
-1. Several copies of the same Python script (with different options or operating on different data) an be run in parallel, as a job array.
+1. Several copies of the same Python script (with different options or operating on different data) can be run in parallel, as a job array.
 2. The Python script itself can be parallelized using MPI and `mpi4py`.
 
 ### 1. Python with a Slurm Job Array
 
 Setting up a job array is a way to run a number of copies of the same program.
 Each copy of the program can have different options, or operate on different data.
-For more information on job arrays can be [found here](https://sites.google.com/pdx.edu/research-computing/faqs/coeus-hpc-faqs/job-arrays).
+More information on job arrays can be [found here](https://sites.google.com/pdx.edu/research-computing/faqs/coeus-hpc-faqs/job-arrays).
 
 As an example, consider a Python script that takes a number on the command line, and prints its square.
 
@@ -132,13 +133,13 @@ $ sbatch submit.sh
 ```
 The sbatch script `submit.sh` uses a job array to run 4 copies (subtasks) of the script `print_square.py`.
 Each copy of the script will have a different command line argument, corresponding to the job array task ID, which is a numeric value in the range specified in the batch script header.
-After completion, the output of these jobs will be four files, `0.txt`, `1.txt`, `2.txt`, and `3.txt`.
-The contents of each file wil be the output of the Python script, i.e. the square of the task ID.
+After completion, the output of these jobs will be four files, `out-0.txt`, `out-1.txt`, `out-2.txt`, and `out-3.txt`.
+The contents of each file will be the output of the Python script, i.e. the square of the task ID.
 
 ### 2. Python and MPI with `mpi4py`
 
 Applications can use parallelism on HPC clusters such as Orca to speed up computations and obtain results faster.
-One primary way to parallelism Python programs is with `mpi4py`, which is the Python interface to MPI (Message Passing Interface).
+One primary way to parallelize Python programs is with `mpi4py`, which is the Python interface to MPI (Message Passing Interface).
 For comprehensive information on `mpi4py`, see [the documentation](https://mpi4py.readthedocs.io/en/stable/).
 
 To use `mpi4py`, we need to install the `mpi4py` Python package.
@@ -167,10 +168,10 @@ This job can be submitted using the following batch script.
 ```bash {filename="submit.sh"}
 #!/bin/bash
 #SBATCH --job-name mpi4py_example # Job name.
-#SBATCH --partition short         # Use a short partition since this is not a long running job.
-#SBATCH --ntasks 4                # Allocate four CPU cores to run in parallel.
-#SBATCH --output out.txt          # Write output to out.txt.
-#SBATCH --error  err.txt          # Write errors to err.txt.
+#SBATCH --partition short         # Use a short partition since this is not a long running job.
+#SBATCH --ntasks 4                # Allocate four CPU cores to run in parallel.
+#SBATCH --output out.txt          # Write output to out.txt.
+#SBATCH --error err.txt           # Write errors to err.txt.
 
 # Load the Python module
 module load python
@@ -178,7 +179,7 @@ module load python
 source mpi4py-example/bin/activate
 
 # Run mpi_example.py in parallel using four CPU cores (and four ranks/processes).
-mpirun -np 4 python3 mpi_example.py
+srun -n 4 python3 mpi_example.py
 ```
 
 Submit the sbatch script:
