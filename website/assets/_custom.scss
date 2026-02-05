@@ -77,9 +77,12 @@ a.markdown-btn:active, a.markdown-btn:hover {
    text-align: center;
 }
 
-/* Style for codeblock titles */
+/* Style for codeblocks */
+
+@import "chroma.scss"; /* Syntax highlighting style */
+
 figure.codeblock {
-   font-size: 0.75rem;
+   font-size: 0.875rem;
 }
 
 figcaption.codeblock-header {
