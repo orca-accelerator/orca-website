@@ -16,3 +16,15 @@ The symposium was a meeting of current and potential users of Orca with the goal
 
 The symposium was held on **Saturday, October 25th, 2025** on the Reed College campus in Portland, OR in the Gray Lounge inside the Kaul Auditorium building.
 The symposium was organized by [Greg Anderson](mailto:grega@reed.edu).
+
+## Speakers and Agenda
+
+The speakers and the symposium were:
+
+* Marko Markoc and Michael Ewan (PSU)
+* Christy Long (UO)
+* Austen Nelson (PSU)
+* Anna Ritz (Reed)
+* Mathew Huerta-Enochian (UO)
+* Kaj Hansteen Izora (PSU)
+* Tabrez Ebrahim (Lewis and Clark)
