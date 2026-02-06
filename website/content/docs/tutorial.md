@@ -26,12 +26,12 @@ See [the documentation on connecting via SSH]({{< ref "connecting/#authenticatio
 
 ## Step 3. Connecting to Orca
 
-After your Orca account has been provisioned and SSH authentication has been set up, you can connect to Orca via ssh by running
+After your Orca account has been provisioned and SSH authentication has been set up, you can connect to Orca via `ssh` by running
 ```
 ssh username@login.orca.pdx.edu
 ```
 where `username` is replaced with your Orca username.
-See the documentation  on [Connecting to Orca]({{< ref connecting >}}) for more information.
+See the documentation on [Connecting to Orca]({{< ref "connecting" >}}) for more information.
 
 ## Step 4. Requesting an Interactive Session
 

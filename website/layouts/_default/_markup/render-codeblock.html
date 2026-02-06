@@ -1,0 +1,33 @@
+{{- $title := "" -}}
+{{- $filename := "" -}}
+{{- $classname := "codeblock" -}}
+{{- $preclassname := "chroma" -}}
+
+{{- with .Attributes.title -}}{{- $title = . -}}{{- end -}}
+{{- with .Attributes.filename -}}{{- $filename = . -}}{{- end -}}
+
+{{- if or $title $filename -}}
+  {{- $preclassname = "chroma codeblock-with-header" -}}
+{{- end -}}
+
+<figure class="{{ $classname }}">
+  {{- if or $title $filename -}}
+    <figcaption class="codeblock-header">
+      {{- if $filename -}}
+        <span class="codeblock-header-fileicon">description</span>
+        <span class="codeblock-header-filename">{{ $filename }}</span>
+      {{- else -}}
+        <span class="codeblock-header-title">{{ $title }}</span>
+      {{- end -}}
+    </figcaption>
+  {{- end -}}
+  <pre class="{{ $preclassname }}"><code class="language-{{ .Type }}" data-lang="{{ .Type }}">
+    {{- if (transform.CanHighlight .Type) -}}
+      {{- with transform.HighlightCodeBlock . -}}
+        {{ .Inner }}
+      {{- end -}}
+    {{- else -}}
+      {{ .Inner }}
+    {{- end -}}
+  </code></pre>
+</figure>
