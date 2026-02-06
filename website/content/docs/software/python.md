@@ -110,7 +110,7 @@ print(sys.argv[1], "squared =", value*value)
 ```
 
 We can set up a job array to run multiple copies of this script, each with a different number.
-This can be achieved through a [Slurm batch script]({{< ref "submitting-jobs" >}}#batch-jobs).
+This can be achieved through a [Slurm batch script]({{< ref "submitting-jobs#batch-jobs" >}}).
 
 ```bash {filename="submit.sh"}
 #!/bin/bash
