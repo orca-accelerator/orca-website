@@ -19,7 +19,7 @@ The symposium was organized by [Greg Anderson](mailto:grega@reed.edu).
 
 ## Speakers and Agenda
 
-The speakers and the symposium were:
+The speakers at the symposium were:
 
 * Marko Markoc and Michael Ewan (PSU)
 * Christy Long (UO)
