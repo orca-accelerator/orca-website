@@ -3,18 +3,22 @@
 /* Chroma theme tokens */
 :root {
   --chroma-bg: #f8f9fa; /* background color */
+  --chroma-line-highlight: #e5e5e5;
   --chroma-text: #000; /* text color (black) */
-  --chroma-ink-1: #666; /* “token gray” (names/strings/etc.) */
-  --chroma-ink-2: #888; /* comments/preproc */
+  --chroma-ink-1: #666; /* token color (names/strings/etc.) */
+  --chroma-ink-2: #888; /* comments */
+  --chroma-ink-3: #7f7f7f; /* line numbers */
 }
 
 /* Dark mode */
 @media (prefers-color-scheme: dark) {
   :root {
     --chroma-bg: #494e54; /* background color */
+    --chroma-line-highlight: #34373c;
     --chroma-text: #fff;
     --chroma-ink-1: #e9ecef;
     --chroma-ink-2: #b7b7b7;
+    --chroma-ink-3: #d1d0d0;
   }
 }
 
@@ -23,9 +27,9 @@
 /* LineLink */ .chroma .lnlinks { outline:none;text-decoration:none;color:inherit }
 /* LineTableTD */ .chroma .lntd { vertical-align:top;padding:0;margin:0;border:0; }
 /* LineTable */ .chroma .lntable { border-spacing:0;padding:0;margin:0;border:0; }
-/* LineHighlight */ .chroma .hl { background-color:#e5e5e5 }
-/* LineNumbersTable */ .chroma .lnt { white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f }
-/* LineNumbers */ .chroma .ln { white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f }
+/* LineHighlight */ .chroma .hl { background-color:var(--chroma-line-highlight) }
+/* LineNumbersTable */ .chroma .lnt { white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:var(--chroma-ink-3) }
+/* LineNumbers */ .chroma .ln { white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:var(--chroma-ink-3) }
 /* Line */ .chroma .line { display:flex; }
 /* Keyword */ .chroma .k { font-weight:bold }
 /* KeywordConstant */ .chroma .kc { font-weight:bold }
