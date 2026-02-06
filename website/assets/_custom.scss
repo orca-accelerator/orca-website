@@ -78,7 +78,8 @@ a.markdown-btn:active, a.markdown-btn:hover {
 
 /* Style for codeblocks */
 
-@import "chroma.scss"; /* Syntax highlighting style */
+/* Syntax highlighting style */
+/* @import "chroma.scss"; */
 
 figure.codeblock {
    font-size: 0.875rem;
