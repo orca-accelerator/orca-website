@@ -18,9 +18,10 @@ You can connect to Orca in two ways:
 
 ## Secure Shell (`ssh`)
 
-You can connect to Orca using `ssh` (secure shell) run through a terminal application.
+You can connect to Orca using `ssh` (secure shell) running through a terminal application.
 If you use Linux, Mac OS, or recent versions of Windows, a terminal application is included with the operating system.
 Windows users may also consider using [MobaXterm](https://mobaxterm.mobatek.net) or [PuTTY](https://www.putty.org).
+
 
 You can connect to Orca by running `ssh username@login.orca.pdx.edu`, replacing `username` with your Orca username.
 
@@ -56,21 +57,21 @@ You can either create a new key pair, or you can use an existing key pair if you
     5. Select "Manage"
     6. Select "Add SSH Key"
     7. Choose your SSH public key, and select "Upload"
-3. **Connect via ssh.** After completing the steps above, you should be able to connect via `ssh` by following the steps [described above](#secure-shell-ssh); you should be logged in automatically without being prompted to enter a password.
-  If you have trouble logging in after following these steps, [contact us to get help]({{< ref getting-help >}}).
+3. **Connect via ssh.** After completing the steps above, you should be able to connect via `ssh` by following the steps [described above](#secure-shell-ssh); you should be logged in automatically without being prompted to enter a password. _You may need to configure `ssh` to use the newly created key pair for authentication. See the documentation ([AWS](https://docs.aws.amazon.com/transfer/latest/userguide/sshkeygen.html), [DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-configure-ssh-key-based-authentication-on-a-linux-server)) for detailed instructions._
+  If you have trouble logging in after following these steps, [contact us to get help]({{< ref "/about/getting-help" >}}).
 
 ## Login Node
 
-The Orca login node is the where the users interface with the file system, scheduler, and other tools.
+The Orca login node is where users interface with the file system, scheduler, and other tools.
 The Orca login node can be accessed at `login.orca.pdx.edu`.
 The login node does not have a high-performance CPU or any GPUs.
 For compute-intensive work, a job should be run on one or more of the compute nodes (see the pages on {{< autolink "submitting-jobs.md" >}}).
 
 {{< notice warning >}}
 **Do not run computational jobs on the login node.**
-These are for logging in, accessing your home directory, accessing file systems, writing and editing files, compressing and uncompressing data sets, scheduling computational jobs, etc.
+This is for logging in, accessing your home directory, accessing file systems, writing and editing files, compressing and uncompressing data sets, scheduling computational jobs, etc.
 Computational jobs should be run on compute nodes, through the [Slurm job scheduler]({{< ref "docs/submitting-jobs" >}}).
-Long computational process running on login nodes are liable to be terminated without notification.
+Long computational processes running on login nodes are liable to be terminated without notification.
 {{< /notice >}}
 
 ## Open OnDemand
