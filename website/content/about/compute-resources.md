@@ -14,7 +14,7 @@ bookToc: false
 The Orca cluster features 25 GPU-enabled compute nodes, each with 4 GPUs.
 Six nodes have Nvidia L40S GPUs, and 19 nodes have Nvidia A30 GPUs.
 
-All nodes have 64-core AMD EPYC Genoa 9534 2.45 GHz CPUs with 576 GB RAM and 480 GB SSD for local scratch storage.
+All nodes have 64 core AMD EPYC Genoa 9534 2.45 GHz CPUs with 576 GB RAM and 480 GB SSD for local scratch storage.
 
 
 | Nodes          | Quantity | GPUs               | CPU cores | CPU                          | RAM    |

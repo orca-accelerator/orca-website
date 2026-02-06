@@ -25,14 +25,14 @@ You will be prompted to log in using your institutional login.
 
 > [!Question] If your institution is not listed
 >
-> Your institution may not be listed as an available option in the login page; this is likely because they are not part of the [InCommon Federation](https://incommon.org).
+> Your institution may not listed as an available option in the login page; this is likely because they are not part of the [InCommon Federation](https://incommon.org).
 > In this case, we recommend that you first create an [ACCESS CI](https://access-ci.org) account.
 > After creating your ACCESS account, select ACCESS CI as your institution when logging into the Orca account creation webpage.
 
 ## Step 2. Account Approval
 
 After creating the account, it will be submitted to Orca administrators for approval.
-Once administrators approve the account creation, you will be notified by email.
+Once administrators approve the account creation you will be notified by email.
 
 ## Step 3. Upload SSH Public Key
 

@@ -65,7 +65,7 @@ You can later revoke access with `ws_share unshare <ws-name> <user>`.
 ## Local Scratch
 
 Each compute node comes equipped with a 480 GB SSD.
-This is high-performance storage that can be used as a local scratch space to store or access temporary files needed while a job is running.
+This is high-performance storage that can be used as a local scratch space to store or access temporary files needed while a job in running.
 It is only accessible from within a Slurm job, where it is mounted at `/tmp`.
 Each node can only access data on its own SSD; there is no networked access.
 
@@ -74,5 +74,5 @@ Each node can only access data on its own SSD; there is no networked access.
    **Once the job finishes, any data in local scratch will be immediately deleted.**
 {{< /notice >}}
 
-If you need to repeatedly access files in one job, you may want to copy them to local scratch at the beginning of a job, from which subsequent access will be fast.
+If you need to repeatedly access files in one job, you may want to copy them to local scratch at the beginning of job, from which subsequent access will be fast.
 If you need to keep any files from local scratch, they must be copied to another location (your [home directory](#home-directory) or [parallel scratch storage](#parallel-scratch-storage)) before the job finishes.

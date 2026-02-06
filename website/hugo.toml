@@ -17,5 +17,4 @@ BookFavicon = 'favicon.png'
   [markup.goldmark.parser.attribute]
     block = true
   [markup.highlight]
-    style = 'bw'
-    noClasses = false
+    style = 'tango'
