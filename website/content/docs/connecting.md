@@ -46,6 +46,8 @@ You can either create a new key pair, or you can use an existing key pair if you
    * After completion, two files will have been created: a **public key** and **private key**.
      The public key will be uploaded to Orca in the next step.
      The private key is secret, and should not be shared.
+     Note: Your SSH key files (both the private key and the public key) should be placed in your `~/.ssh` directory before logging in.
+     If they are not there, move them using the commands `mv <keyname> ~/.ssh/` and `mv <keyname>.pub ~/.ssh/`, replacing `<keyname>` with your actual key filenames.
    * For more information, further documentation and tutorials can be found online ([AWS](https://docs.aws.amazon.com/transfer/latest/userguide/sshkeygen.html), [DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-configure-ssh-key-based-authentication-on-a-linux-server)).
 2. **Upload the public key to Orca.** Using the web-based [Orca Registry](https://orca.pdx.edu/registry), upload the public key file to your account.
    You can have multiple public keys associated with your account.
