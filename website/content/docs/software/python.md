@@ -34,24 +34,24 @@ $ module avail python
    intel-python/24.0.0
 ```
 
-One of these versions of Python can be loaded by running, for example, `module load python/3.13.5`.
-The Intel Python Distribution is also available through the `intel-python` module; this Python distribution includes many commonly used scientific Python packages.
+One of these versions of Python can be loaded by running a simple command such as, `module load python/3.13.5`.
+The Intel Python Distribution, which includes many commonly used scientific Python packages, is also available through the `intel-python` module.
 
 > [!IDEA] Python 3 and Python 2
 > Python 2 is an older version of Python.
-> In general, it is highly recommended to use Python 3 since it has major changes and improvements and has the best support for packages and libraries.
-> Using Python 2 is highly discouraged.
+> In general, it is better to use Python 3 since it has major changes and improvements and has the best support for packages and libraries.
+> It is best to avoid using Python 2 unless you have a very good reason to use it. 
 
 ## Installing Python Packages
 
 Individual users can install and use Python packages using **virtual environments**.
-Virtual environments are an easy-to-use way to organize different sets of packages into a small, clean, and self-contained environment.
+Virtual environments are easy-to-use ways to organize different sets of packages into one small, clean, and self-contained environment.
 The standard way to create virtual environments and install packages is through `venv`.
 
 ### Virtual Environments Using `venv`
 
-To install packages that are needed for a specific project, first create a virtual environment (a "venv").
-In this example, the environment is named `my-python-env`; you can pick any name for your project.
+To install packages that are needed for a specific project, first create a virtual environment (also known as a "venv").
+In this example, the environment is named `my-python-env`; feel free to pick any name for your project, as long as '-env' is placed at the end.
 
 ```bash
 $ python3 -m venv my-python-env
@@ -101,7 +101,7 @@ Setting up a job array is a way to run a number of copies of the same program.
 Each copy of the program can have different options, or operate on different data.
 More information on job arrays can be [found here](https://sites.google.com/pdx.edu/research-computing/faqs/coeus-hpc-faqs/job-arrays).
 
-As an example, consider a Python script that takes a number on the command line, and prints its square.
+For example, let's use a Python script that takes a number on the command line, and prints its square.
 
 ```python {filename="print_square.py"}
 import sys
@@ -130,16 +130,16 @@ The batch job can then be submitted to Slurm:
 ```bash {title="Orca Shell"}
 $ sbatch submit.sh
 ```
-The sbatch script `submit.sh` uses a job array to run 4 copies (subtasks) of the script `print_square.py`.
+The sbatch script `submit.sh` uses a job array to run four copies (subtasks) of the script `print_square.py`.
 Each copy of the script will have a different command line argument, corresponding to the job array task ID, which is a numeric value in the range specified in the batch script header.
-After completion, the output of these jobs will be four files, `out-0.txt`, `out-1.txt`, `out-2.txt`, and `out-3.txt`.
-The contents of each file will be the output of the Python script, i.e. the square of the task ID.
+After completion, the output of these jobs will be four files: `out-0.txt`, `out-1.txt`, `out-2.txt`, and `out-3.txt`.
+The contents of each file will be the output of the Python script (i.e. the square of the task ID).
 
 ### 2. Python and MPI with `mpi4py`
 
-Applications can use parallelism on HPC clusters such as Orca to speed up computations and obtain results faster.
-One primary way to parallelize Python programs is with `mpi4py`, which is the Python interface to MPI (Message Passing Interface).
-For comprehensive information on `mpi4py`, see [the documentation](https://mpi4py.readthedocs.io/en/stable/).
+Applications can use parallelism on HPC clusters like Orca to speed up computations and obtain results faster.
+One major way to parallelize Python programs is with `mpi4py`, which is the Python interface to MPI (Message Passing Interface).
+For more in-depth information on `mpi4py`, see [the documentation](https://mpi4py.readthedocs.io/en/stable/).
 
 To use `mpi4py`, we need to install the `mpi4py` Python package.
 We will do this in a [virtual environment using `venv`](#virtual-environments-using-venv).
@@ -198,7 +198,7 @@ I am process 3 out of 4
 
 ## Using Python with Conda or Mamba
 
-Conda is not generally recommended, however it may be necessary if using packages from specific Conda channels such as `bioconda`.
+Conda is not generally recommended; however, it may be necessary if you are using packages from specific Conda channels like `bioconda`.
 If Conda-specific packages are not required, users are recommended to use [Python with `venv`](#virtual-environments-using-venv) or [Python with `uv`](#using-python-with-uv) instead.
 Conda is available on Orca through the Intel Python distribution.
 Loading Intel Python by running `module load intel-python` will make both `conda` and `mamba` available.
