@@ -28,30 +28,30 @@ To see the available versions of Python, run `module avail python` in the termin
 $ module avail python
 
 --------- /software/spack/v1.0/modules/linux-rocky9-x86_64/gcc/13.4.0 ----------
-   python/3.12.9-gcc-13.4.0-5rbfaiu    python/3.13.5-gcc-13.4.0-3crd7yj (D)
+   python/3.12.12-gcc-13.4.0    python/3.14.0-gcc-13.4.0 (D)
 
 ---------------------------- /software/modulefiles -----------------------------
    intel-python/24.0.0
 ```
 
-One of these versions of Python can be loaded by running a simple command such as, `module load python/3.13.5`.
+One of these versions of Python can be loaded by running, for example, `module load python/3.14.0`.
 The Intel Python Distribution, which includes many commonly used scientific Python packages, is also available through the `intel-python` module.
 
 > [!IDEA] Python 3 and Python 2
 > Python 2 is an older version of Python.
 > In general, it is better to use Python 3 since it has major changes and improvements and has the best support for packages and libraries.
-> It is best to avoid using Python 2 unless you have a very good reason to use it. 
+> It is best to avoid using Python 2 unless you have a very good reason to use it.
 
 ## Installing Python Packages
 
 Individual users can install and use Python packages using **virtual environments**.
-Virtual environments are easy-to-use ways to organize different sets of packages into one small, clean, and self-contained environment.
+Virtual environments are an easy-to-use way to organize different sets of packages into one small, clean, and self-contained environment.
 The standard way to create virtual environments and install packages is through `venv`.
 
 ### Virtual Environments Using `venv`
 
 To install packages that are needed for a specific project, first create a virtual environment (also known as a "venv").
-In this example, the environment is named `my-python-env`; feel free to pick any name for your project, as long as '-env' is placed at the end.
+In this example, the environment is named `my-python-env`; feel free to pick any name for your environment.
 
 ```bash
 $ python3 -m venv my-python-env
