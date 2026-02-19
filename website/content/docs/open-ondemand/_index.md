@@ -4,7 +4,7 @@ weight: 10
 # bookFlatSection: false
 # bookToc: true
 # bookHidden: false
-# bookCollapseSection: false
+bookCollapseSection: true
 # bookComments: false
 # bookSearchExclude: false
 ---
@@ -21,10 +21,12 @@ weight: 10
 
 Currently, Orca's Open OnDemand supports
 
-1. Python Jupyter notebooks
-   * Select **Jupyter Notebook** under the **Interactive Apps** menu
-2. Web-based terminal
+* [JupyterLab and Jupyter Notebooks]({{< ref "jupyter" >}})
+   * Select **JupyterLab** or **Jupyter Notebook** under the **Interactive Apps** menu
+* Remote Desktop
+   * Select **Orca Desktop** under the **Interactive Apps** menu
+* Web-based terminal
    * Select **orca Shell Access** under the **Clusters** menu
-3. Graphical file and job management
+* Graphical file and job management
 
 This feature is under active development, and more capabilities are planned.
