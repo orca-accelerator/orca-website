@@ -39,4 +39,14 @@ You can logout of the desktop now if you want to.
 
 ## Start Jupyter notebook or lab
 
+From the Open OnDemand screen at https://openondemand.orca.pdx.edu/, select Jupyter Lab or Jupyter Notebook from the Interactive Apps pull down menu.
+
+Enter the number cores and number of GPU you think you will need for your project and click launch.
+
+The next screen will show the status of the job, when it is ready click the connect button.
+
 ## Connect to an existing Python virtual environment
+
+Use the "New" pulldown in the upper right corner of the notebook screen to select the Python kernel you created above.  
+
+In Jupyter Lab the available kernels will be displayed in the Notebook section of the Launcher tab on the screen.
