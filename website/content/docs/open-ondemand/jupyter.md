@@ -22,7 +22,7 @@ Python 3.14.0
 ### Create a virtual environment
 ``` shell
 $ python -m venv myproj
-$ source pyproj/bin/activate
+$ source myproj/bin/activate
 ```
 ### Install project specific packages
 ``` shell
