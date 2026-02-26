@@ -56,6 +56,8 @@ The next screen will show the status of the job, when it is ready click the conn
 
 Use the 'New' pulldown in the upper right corner of the notebook screen to select the Python kernel you created above.
 ![Kernels are found under the 'New' button on the Jupyter Notebook homepage.](orca-jupyter-notebook-small-04.png)
+
+If you open an existing notebook, Jupyter will prompt for the kernel to use.
 ![In the pop-up message titled 'Select Kernel', click on the desired kernel from the drop down menu. Then, click 'Select' in the lower right-hand corner of the pop-up message.](orca-jupyter-notebook-small-05.png)
 
 In Jupyter Lab, the available kernels will be displayed in the 'Notebook' section of the 'Launcher' tab on the screen.
