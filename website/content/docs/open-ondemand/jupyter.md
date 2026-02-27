@@ -10,6 +10,10 @@ weight: 1
 ---
 
 # JupyterLab and Jupyter Notebooks
+**JupyterLab** is a next-generation interface that allows users to work with multiple documents (including Jupyter notebooks, text editors, terminals, and more) in a flexible, integrated environment tailored to their project. **Jupyter Notebooks** offers an interactive environment for combining code, visualizations, and narrative text.
+This page explains how users can manage their own environments and use them within Jupyter. 
+
+For more information about the differences between JupyterLab and Jupyter Notebook (and which is best for your project), [see this Jupyter community forum thread.](https://discourse.jupyter.org/t/jupyter-notebook-vs-jupyter-lab-vdf-jupyterhub-whats-the-diff/475)
 
 ## Set Up Python Virtual Environment
 Connect to an Open OnDemand desktop from https://orca.pdx.edu/docs/open-ondemand/.
