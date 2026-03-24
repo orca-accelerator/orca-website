@@ -110,7 +110,7 @@ The following are useful directives for `sbatch` scripts.
 Many more options are available; see the [sbatch documentation](https://slurm.schedmd.com/sbatch.html) for a comprehensive list.
 
 * `--job-name=<name>` --- readable job name
-* `--partition=<short|medium|long>` --- partition selection
+* `--partition=<short|normal|long>` --- partition selection
 * `--time=HH:MM:SS` --- time limit
 * `--nodes=<N>`, `--ntasks=<ranks>`, `--cpus-per-task=<threads>`
 * `--mem=<size>` or `--mem-per-cpu=<size>`
@@ -133,7 +133,7 @@ The Orca cluster has three partitions to which jobs can be submitted.
 | Partition | Time Limit | Total Nodes |
 | --- | --- | --- |
 | `short` | 4 hours | 19 nodes |
-| `medium` | 7 days | 21 nodes |
+| `normal` | 7 days | 21 nodes |
 | `long` | 20 days | 9 nodes |
 
 Note that the node lists assigned to the partitions overlap.
