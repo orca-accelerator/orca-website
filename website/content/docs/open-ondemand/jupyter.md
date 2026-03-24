@@ -53,7 +53,7 @@ From there, you can log out of the OnDemand Desktop if you want to.
 From the Open OnDemand screen at https://openondemand.orca.pdx.edu/, select 'Jupyter Lab' or 'Jupyter Notebook' from the Interactive Apps pull down menu.
 [![Links for 'Jupyter Lab and 'Jupyter Notebook' are listed under the 'Interactive Apps' tab on the Open OnDemand start page.](orca-jupyter-notebook-01.png)](orca-jupyter-notebook-01.png)
 
-Enter the number of cores GPUs you think you will need for your project and click 'launch'.
+Enter the number of cores and GPUs you would like to use for your project and click 'launch'.
 [![Jupyter Notebook launch page including the number of hours and GPUs needed for your project.](orca-jupyter-notebook-02.png)](orca-jupyter-notebook-02.png)
 
 The next screen will show the status of the job, when it is ready click the connect button.
