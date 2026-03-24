@@ -10,37 +10,40 @@ weight: 1
 ---
 
 # JupyterLab and Jupyter Notebooks
-**JupyterLab** is a next-generation interface that allows users to work with multiple documents (including Jupyter notebooks, text editors, terminals, and more) in a flexible, integrated environment tailored to their project. **Jupyter Notebooks** offers an interactive environment for combining code, visualizations, and narrative text.
-This page explains how users can manage their own environments and use them within Jupyter. 
+**JupyterLab** is a modern interface that allows users to work with multiple documents (including Jupyter notebooks, text editors, terminals, and more) in a flexible, integrated environment tailored to their project.
+**Jupyter Notebooks** offers an interactive environment for combining code, visualizations, and narrative text.
+This page explains how users can manage their own environments and use them within Jupyter.
 
-For more information about the differences between JupyterLab and Jupyter Notebook (and which is best for your project), [see this Jupyter community forum thread.](https://discourse.jupyter.org/t/jupyter-notebook-vs-jupyter-lab-vdf-jupyterhub-whats-the-diff/475)
+For more information about the differences between JupyterLab and Jupyter Notebook (and which is best for your project), [see this Jupyter community forum thread](https://discourse.jupyter.org/t/jupyter-notebook-vs-jupyter-lab-vdf-jupyterhub-whats-the-diff/475).
 
 ## Set Up Python Virtual Environment
 Connect to an Open OnDemand desktop from https://orca.pdx.edu/docs/open-ondemand/.
 Then start a terminal and run the following command:
-``` shell
+```bash {title="Orca Shell"}
 $ module load python
 $ python --version
 Python 3.14.0
 ```
 ### Create a Virtual Environment
-First, have a name for your environment. Then, run the following command:
-``` shell
+First, you will need a name for your environment.
+In this example, we will use the name 'myproj'.
+Then, run the following commands:
+```bash {title="Orca Shell"}
 $ python -m venv myproj
 $ source myproj/bin/activate
 ```
 **Where 'myproj' is, replace it with your environment's name.**
 ### Install Project-Specific Packages
 To install project-specific packages, run the following command:
-``` shell
+```bash {title="Orca Shell"}
 $ pip install --upgrade pip
 $ pip install pandas  # for example
 $ pip install torch torchvision # if needed
-$ pip install ipykernel
 ```
-### Create the Ipykernel Mapping
-To create the ipykernel mapping, run the following command:
-``` shell
+### Create the IPython Kernel
+To use your environment from within Jupyter, you need to create and registry an IPython Kernel (ipykernel).
+```bash {title="Orca Shell"}
+$ pip install ipykernel
 $ python -m ipykernel install --user --name myproj --display-name "Python (myproj)"
 ```
 From there, you can log out of the OnDemand Desktop if you want to.
