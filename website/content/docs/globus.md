@@ -15,7 +15,7 @@ First you need scratch space on Orca, login to the cluster and create scratch sp
 
 Login to Globus (or set up an account) at the [login page](https://app.globus.org) (https://app.globus.org), select your university and use your university SSO credentials.
 
-Once logged in, go to the file manager page.  Here you can transfer files to/from Orca and any other registered end point.  For example, in the first collection search bar enter 'weather', and look for NC State Research Storage (this is a free to use weather data collection).  Pick the specific data set in the menus.  On the other collection search for Orca.  Find the scratch space you created in the folder menus and navigate to it or enter the name in the destination bar.  Then hit the Start (>) button.  Globus will copy the data set and send you an email when it is done.  You can close the browser tab.
+Once logged in, go to the file manager page.  Here you can transfer files to/from Orca and any other registered end point.  For example, in the first collection search bar enter 'weather', and look for NC State Research Storage (this is a free to use weather data collection).  Pick the specific data set in the menus.  On the other collection search for Orca.  Find the scratch space you created in the folder menus and navigate to it or enter the full path in the path bar.  Then hit the Start (>) button.  Globus will copy the data set and send you an email when it is done.  You can close the browser tab.
 
 ## Setup Globus to use the personal connection point
 
