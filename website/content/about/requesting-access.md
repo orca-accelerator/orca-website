@@ -19,6 +19,12 @@ Just follow the steps listed below.
 Fill out the [**account creation form**](https://orca.pdx.edu/registry/co_petitions/start/coef:13).
 You will be prompted to log in using your institutional login.
 
+{{< notice warning >}}
+**Do not close the browser window until the full account creation process has been completed.**
+Closing the browser window early will leave the account in an invalid state.
+If this happens, contact orca@pdx.edu to resolve the issue.
+{{< /notice >}}
+
 > [!INFO] Choosing a Username
 >
 > When choosing a username, we recommend the format `user_institution` (where your email is typically `user@institution.edu`).
