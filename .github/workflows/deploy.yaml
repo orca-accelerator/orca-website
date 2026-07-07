@@ -1,0 +1,23 @@
+name: Build and Deploy Orca Site
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v7
+        with:
+          submodules: true
+          fetch-depth: 0
+
+      - name: Build Site
+        run: hugo build -s website --minify
+
+      - name: Deploy
+        run: rsync -av --delete website/public/ /var/www/html/orca.pdx.edu/
